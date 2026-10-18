@@ -363,7 +363,17 @@ export default function Sidebar({
 
       {/* Footer */}
       <div className="p-3 border-t border-slate-200 text-[10px] text-slate-500 flex items-center justify-between bg-slate-100/70">
-        <span>Ina PDRI &copy; 2026</span>
+        <span>
+          <a
+            href="https://lifeofrifai.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600 hover:underline transition-colors font-medium text-slate-700"
+          >
+            lifeofrifai
+          </a>{' '}
+          &copy; 2026
+        </span>
         <span>MapLibre GL Vector Engine</span>
       </div>
     </aside>
