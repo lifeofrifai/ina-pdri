@@ -293,9 +293,8 @@ Based on user feedback, three interface refinements were implemented:
 2. **Simplified Coordinates Section**:
    - Removed external "Buka di Google Maps" redirect button to keep user focus within the GIS dashboard.
    - Retained precision Latitude and Longitude values along with a quick copy-to-clipboard action button.
-3. **Optimized Photo Inspection**:
-   - Removed inline `<img>` preview from the slide-over drawer to eliminate image load lag and save bandwidth.
-   - Replaced with a clean action button ("Lihat Detail Foto Lapangan") linking directly to the full-resolution photo in a new tab.
+3. **Removed Photo Section from Detail Data**:
+   - Completely removed the field photo section from the slide-over detail drawer to keep the panel focused strictly on essential administrative, disaster, elevation, coordinate, and surveyor metadata.
 4. **Institutional Branding (BNPB & USK)**:
    - Configured official BNPB logo as the web favicon and browser icon (`app/icon.png`, `public/favicon.ico`, and `layout.tsx` metadata).
    - Positioned official BNPB and Universitas Syiah Kuala (USK) logos side-by-side in balanced 3/4 proportions (`w-full` container, BNPB `h-14` / USK `h-11`) above the "Ina PDRI 2026" title in the sidebar brand header, displayed cleanly without a dash separator inside a dedicated crisp white card.

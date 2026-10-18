@@ -8,10 +8,8 @@ import {
   Mountain,
   Calendar,
   User,
-  ExternalLink,
   Copy,
   Check,
-  Camera,
   Compass,
 } from 'lucide-react';
 
@@ -138,25 +136,6 @@ export default function DetailDrawer({ feature, onClose }: DetailDrawerProps) {
             </div>
           </div>
         </div>
-
-        {/* Photo Evidence (if available) - Link only without image preview */}
-        {p.fotoKualitasAirUrl && (
-          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3">
-            <div className="flex items-center gap-2 text-teal-700 font-medium text-sm">
-              <Camera className="w-4 h-4" />
-              <span>Foto Lapangan (Kualitas Air)</span>
-            </div>
-            <a
-              href={p.fotoKualitasAirUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 px-3 bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-300 rounded-lg text-xs font-medium flex items-center justify-center gap-2 transition shadow-2xs hover:text-teal-900"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Lihat Detail Foto Lapangan</span>
-            </a>
-          </div>
-        )}
 
         {/* Survey Metadata */}
         <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-2 text-xs">
