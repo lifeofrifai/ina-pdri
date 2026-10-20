@@ -6,7 +6,8 @@ import MapContainer from '@/components/map/MapContainer';
 import Sidebar from '@/components/sidebar/Sidebar';
 import DetailDrawer from '@/components/detail/DetailDrawer';
 import RekapModal from '@/components/analytics/RekapModal';
-import { Menu, X, ShieldAlert } from 'lucide-react';
+import Link from 'next/link';
+import { Menu, X, ShieldAlert, TrendingUp } from 'lucide-react';
 
 interface InaPdriDashboardProps {
   geojsonData: InaPdriGeoJSON;
@@ -28,6 +29,17 @@ export default function InaPdriDashboard({
   const [basemapStyle, setBasemapStyle] = useState<'voyager' | 'dark' | 'satellite'>('voyager');
   const [isRekapModalOpen, setIsRekapModalOpen] = useState(false);
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
+
+  // Sync URL search parameters on initial load (e.g. from /kenaikan redirect)
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const provParam = params.get('provinsi');
+      const kabParam = params.get('kabupaten');
+      if (provParam) setSelectedProvince(provParam);
+      if (kabParam) setSelectedKabupaten(kabParam);
+    }
+  }, []);
 
   // Toggle disaster filter
   const handleDisasterToggle = (disasterName: string) => {
@@ -76,10 +88,10 @@ export default function InaPdriDashboard({
     ) || null;
   }, [summaryData, selectedProvince]);
 
-  // Active rekap target (Kabupaten or Province level)
+  // Active rekap target (Only Kabupaten level)
   const activeRekapInfo = React.useMemo(() => {
-    if (!activeProvinceSummary) return null;
-    if (selectedKabupaten && activeProvinceSummary.kabupatenRekap?.[selectedKabupaten]) {
+    if (!activeProvinceSummary || !selectedKabupaten) return null;
+    if (activeProvinceSummary.kabupatenRekap?.[selectedKabupaten]) {
       const kabRekap = activeProvinceSummary.kabupatenRekap[selectedKabupaten];
       const count =
         geojsonData?.features.filter(
@@ -94,21 +106,13 @@ export default function InaPdriDashboard({
         totalPoints: count,
       };
     }
-    if (activeProvinceSummary.rekap) {
-      return {
-        title: `Provinsi ${activeProvinceSummary.provinsi}`,
-        level: 'provinsi' as const,
-        rekap: activeProvinceSummary.rekap,
-        totalPoints: activeProvinceSummary.totalSurveyPoints,
-      };
-    }
     return null;
   }, [activeProvinceSummary, selectedKabupaten, selectedProvince, geojsonData]);
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden flex bg-slate-100 font-sans">
+    <main className="relative w-screen h-screen overflow-hidden flex flex-col md:flex-row bg-slate-100 font-sans">
       {/* Mobile Top Navbar */}
-      <div className="md:hidden absolute top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 p-2.5 flex items-center justify-between text-slate-800 shadow-xs">
+      <div className="md:hidden relative z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 p-2.5 flex items-center justify-between text-slate-800 shadow-xs shrink-0">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-2.5 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-200 shadow-2xs">
             <img
@@ -129,19 +133,38 @@ export default function InaPdriDashboard({
             </span>
           </div>
         </div>
-        <button
-          onClick={() => setIsSidebarMobileOpen((prev) => !prev)}
-          className="p-1.5 rounded-lg bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 hover:bg-slate-200 transition"
-        >
-          {isSidebarMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+
+        <div className="flex items-center gap-2">
+          <Link
+            href="/kenaikan"
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold hover:bg-emerald-100 transition shadow-2xs"
+          >
+            <TrendingUp className="w-3.5 h-3.5" />
+            <span>Kenaikan</span>
+          </Link>
+          <button
+            onClick={() => setIsSidebarMobileOpen((prev) => !prev)}
+            className="p-1.5 rounded-lg bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 hover:bg-slate-200 transition"
+          >
+            {isSidebarMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
+
+      {/* Backdrop for mobile sidebar */}
+      {isSidebarMobileOpen && (
+        <div
+          onClick={() => setIsSidebarMobileOpen(false)}
+          className="md:hidden fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-xs transition-opacity cursor-pointer"
+          aria-label="Tutup Menu"
+        />
+      )}
 
       {/* Sidebar (Desktop always visible, Mobile toggleable) */}
       <div
         className={`${
           isSidebarMobileOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:translate-x-0 transition-transform duration-300 fixed md:relative inset-y-0 left-0 z-40 md:z-auto h-full flex`}
+        } md:translate-x-0 transition-transform duration-300 fixed md:relative inset-y-0 left-0 z-50 md:z-auto h-full flex`}
       >
         <Sidebar
           meta={metaData}
@@ -161,19 +184,12 @@ export default function InaPdriDashboard({
           basemapStyle={basemapStyle}
           onBasemapChange={setBasemapStyle}
           onOpenRekapModal={() => setIsRekapModalOpen(true)}
+          onCloseMobile={() => setIsSidebarMobileOpen(false)}
         />
       </div>
 
-      {/* Backdrop for mobile sidebar */}
-      {isSidebarMobileOpen && (
-        <div
-          onClick={() => setIsSidebarMobileOpen(false)}
-          className="md:hidden fixed inset-0 z-30 bg-slate-900/40 backdrop-blur-xs"
-        />
-      )}
-
       {/* Map View Canvas */}
-      <div className="flex-1 w-full h-full relative">
+      <div className="flex-1 w-full h-full relative min-h-0">
         <MapContainer
           geojsonData={geojsonData}
           selectedFeature={selectedFeature}

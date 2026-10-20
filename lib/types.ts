@@ -80,3 +80,55 @@ export interface InaPdriMeta {
   years: number[];
   provinces: string[];
 }
+
+export interface SectorTimeSeries {
+  t_min_1: number | null;
+  t_0: number | null;
+  t_plus_1: number | null;
+  t_plus_2: number | null;
+  t_plus_3: number | null;
+  t_plus_4: number | null;
+}
+
+export interface KenaikanWilayah {
+  id: number;
+  provinsi: string;
+  kabupaten: string;
+  series: {
+    permukiman: SectorTimeSeries;
+    infrastruktur: SectorTimeSeries;
+    sosial: SectorTimeSeries;
+    ekonomi: SectorTimeSeries;
+    multisektor: SectorTimeSeries;
+  };
+  nilaiTAkhir: {
+    permukiman: number | null;
+    infrastruktur: number | null;
+    sosial: number | null;
+    ekonomi: number | null;
+    multisektor: number | null;
+    rataRata: number | null;
+  };
+  kesimpulan: string;
+  kenaikan: {
+    permukiman: number | null;
+    infrastruktur: number | null;
+    sosial: number | null;
+    ekonomi: number | null;
+    multisektor: number | null;
+    rataRata: number | null;
+  };
+}
+
+export interface RekapKenaikanNationalSummary {
+  rataRataPerSektorTAkhir: number | null;
+  rataRataKenaikan: number | null;
+  totalWilayah: number;
+  totalPulih: number;
+  totalBelumPulih: number;
+}
+
+export interface RekapKenaikanDoc {
+  nationalSummary: RekapKenaikanNationalSummary;
+  data: KenaikanWilayah[];
+}

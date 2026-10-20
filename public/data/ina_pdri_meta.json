@@ -1,21 +1,21 @@
 {
-  "totalPoints": 762,
+  "totalPoints": 767,
   "totalProvinces": 17,
   "totalKabupaten": 42,
   "bounds": [
     95.3378,
-    -8.5358,
-    136.2539,
+    -799622.0,
+    1298135.0,
     5.1344
   ],
   "altitudeRange": [
     -205.7,
-    1562.3
+    2018768.0
   ],
   "disasterTypes": [
     {
       "name": "Banjir",
-      "count": 435,
+      "count": 437,
       "color": "#2563EB"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "name": "Gempa Bumi",
-      "count": 35,
+      "count": 38,
       "color": "#DC2626"
     },
     {

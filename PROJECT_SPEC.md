@@ -313,11 +313,11 @@ Based on user feedback, three interface refinements were implemented:
 
 ### 6.8 Kabupaten/Kota-Level Rekap & Excel-Derived Multi-Sector Visualizations
 - **Data Pipeline Expansion**:
-  - Updated `scripts/extract_data.py` to systematically parse all 42 individual Kabupaten/Kota sheets in `data/Ina PDRI 2026.xlsx` in addition to provincial rekap sheets.
+  - Updated `scripts/extract_data.py` to systematically parse all 42 individual Kabupaten/Kota sheets in addition to provincial rekap sheets.
   - Output mapped cleanly into `public/data/ina_pdri_summary.json` under `kabupatenRekap: Record<string, RekapData>` for each province.
-- **Dynamic Sidebar Switching**:
-  - When filtering by **Provinsi** with *"Semua Kabupaten / Kota"*, the sidebar displays the **Provincial Rekap Card** (`Indeks Rekap Prov. <Nama>`).
-  - When filtering down to a specific **Kabupaten/Kota** (e.g. *Aceh Barat*, *Kota Bogor*, etc.), the sidebar dynamically promotes that region to the **Kabupaten Rekap Card** (`Indeks Rekap <Nama Kab/Kota>`) with its recovery status badge and active action button: *"Lihat Detail Indeks & Grafik &rarr;"*.
+- **Kabupaten-Only Rekap Visibility**:
+  - Per requirements, provincial rekap cards have been removed from the sidebar overview.
+  - The Rekap Card only activates when a specific **Kabupaten/Kota** (e.g. *Aceh Barat*, *Kota Bogor*, etc.) is selected, displaying its recovery status badge and action button: *"Lihat Detail Indeks & Grafik &rarr;"*.
 - **Interactive Multi-Sector Chart (`components/analytics/RekapChart.tsx`)**:
   - Faithfully reproduces the grouped column chart from the master Excel workbook comparing all 5 sectors: *Pemukiman* (Blue), *Infrastruktur* (Orange), *Sosial* (Emerald), *Ekonomi* (Purple), and *Lintas Sektor* (Pink) across $T_{-1}, T_0, T_{+1}, T_{+2}, T_{+3}, T_{+4}$.
   - Features dual view modes:
@@ -325,6 +325,37 @@ Based on user feedback, three interface refinements were implemented:
     2. **Garis Tren**: Trajectory progression lines with node dots and composite average dashed benchmark line.
   - Features an explicit horizontal dashed line at **Baseline 100** (representing the Pra-Bencana benchmark).
   - Built with responsive zero-dependency vector SVG, ensuring instant hydration without external charting library bloat.
+
+### 6.9 Final Master Dataset Update & Dedicated Rekap Kenaikan Page
+- **Updated Master Source (`data/Ina PDRI 2026 - FINAL.xlsx`)**:
+  - Migrated the offline data extraction pipeline to `data/Ina PDRI 2026 - FINAL.xlsx`, expanding field survey points to 767 valid points across Indonesia.
+- **Dedicated Page: `/kenaikan` (`app/kenaikan/page.tsx` & `components/kenaikan/KenaikanDashboard.tsx`)**:
+  - Implements a full-page comparative analysis dashboard based on the `Rekap Kenaikan` sheet from the final Excel workbook.
+  - **National KPI Highlights**:
+    - Total 42 Kabupaten/Kota evaluated across 17 provinces.
+    - Rata-Rata Indeks T-Akhir Nasional: 105.16 (Baseline 100).
+    - Rata-Rata Kenaikan Nasional $((T+n) - T_0)$: +5.79 Poin.
+    - Status Pemulihan Nasional: 37 Pulih (88.1%) vs 5 Belum Pulih (11.9%).
+  - **Multi-Sector Increase Breakdown**:
+    - Average increases across all 5 sectors (Permukiman, Infrastruktur, Sosial, Ekonomi, Multisektor).
+  - **Interactive Controls & Search**:
+    - Live text search across Kabupaten & Provinsi.
+    - Filter by Status (*Semua*, *Pulih*, *Belum Pulih*) and Provinsi.
+    - Sort by Kenaikan Tertinggi/Terendah, Indeks Akhir, or Alphabetical.
+  - **Comprehensive Data Table**:
+    - Displays T-Akhir and Kenaikan per sector along with summary badges.
+    - Expandable rows revealing the complete time series ($T_{-1}$ to $T_{+4}$) for all 5 sectors.
+    - Direct *"Tampilkan di Peta GIS"* link providing deep linking to the map filtered on the respective region.
+  - **Seamless Navigation Switcher**:
+    - Added pill toggle in the sidebar (`[ 🗺️ Peta GIS ]` / `[ 📈 Rekap Kenaikan ]`) and mobile header for instant one-click switching between map and kenaikan views.
+
+### 6.10 MapLibre Race Condition Fix: `Style is not done loading`
+- **Issue**: Intermittently during fast filter changes, deep links, or basemap style switching, MapLibre threw an unhandled runtime error: `Style is not done loading. components/map/MapLibreView.tsx: map.addSource('ina-pdri', ...)`.
+- **Root Cause**: When `map.setStyle()` is triggered or during initial style initialization, `map.isStyleLoaded()` returns `false`. Calling `map.addSource()`, `map.getSource()`, or modifying layers while the style is in-flight throws a fatal MapLibre exception.
+- **Resolution**:
+  - In `setupLayers()`, added guard `if (!map.isStyleLoaded()) { map.once('styledata', () => setupLayers(map, data)); return; }`.
+  - In source update effects (`setData`), wrapped with style readiness check and deferred via `map.once('styledata', ...)`.
+  - In basemap switcher effect, unified style reload synchronization using `'styledata'` lifecycle listener.
 
 ---
 

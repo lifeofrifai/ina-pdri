@@ -207,9 +207,17 @@ export default function MapLibreView({
   // Setup layers helper
   const setupLayers = useCallback((map: Map, data: InaPdriGeoJSON) => {
     try {
+      if (!map.isStyleLoaded()) {
+        map.once('styledata', () => {
+          setupLayers(map, data);
+        });
+        return;
+      }
+
       // If source already exists, just update data
-      if (map.getSource('ina-pdri')) {
-        (map.getSource('ina-pdri') as GeoJSONSource).setData(data);
+      const existingSource = map.getSource('ina-pdri') as GeoJSONSource | undefined;
+      if (existingSource) {
+        existingSource.setData(data);
         return;
       }
 
@@ -422,7 +430,16 @@ export default function MapLibreView({
 
     mapRef.current = map;
 
+    // Responsive resize observer to ensure map controls and canvas resize cleanly
+    const resizeObserver = new ResizeObserver(() => {
+      map.resize();
+    });
+    if (mapContainerRef.current) {
+      resizeObserver.observe(mapContainerRef.current);
+    }
+
     return () => {
+      resizeObserver.disconnect();
       if (popupRef.current) popupRef.current.remove();
       map.remove();
       mapRef.current = null;
@@ -434,11 +451,23 @@ export default function MapLibreView({
     const map = mapRef.current;
     if (!map || !mapLoaded) return;
 
-    const source = map.getSource('ina-pdri') as GeoJSONSource | undefined;
-    if (source) {
-      source.setData(filteredData);
-    } else {
-      setupLayers(map, filteredData);
+    if (!map.isStyleLoaded()) {
+      map.once('styledata', () => {
+        if (!mapRef.current) return;
+        setupLayers(mapRef.current, filteredData);
+      });
+      return;
+    }
+
+    try {
+      const source = map.getSource('ina-pdri') as GeoJSONSource | undefined;
+      if (source) {
+        source.setData(filteredData);
+      } else {
+        setupLayers(map, filteredData);
+      }
+    } catch (err) {
+      console.warn('Map source update deferred:', err);
     }
   }, [filteredData, mapLoaded, setupLayers]);
 
@@ -452,9 +481,11 @@ export default function MapLibreView({
     const targetStyle = BASEMAP_STYLES[basemapStyle];
     if (targetStyle) {
       map.setStyle(targetStyle);
-      map.once('style.load', () => {
-        setupLayers(map, filteredDataRef.current);
-      });
+      const onStyleReady = () => {
+        if (!mapRef.current) return;
+        setupLayers(mapRef.current, filteredDataRef.current);
+      };
+      map.once('styledata', onStyleReady);
     }
   }, [basemapStyle, mapLoaded, setupLayers]);
 
