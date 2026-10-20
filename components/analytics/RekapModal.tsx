@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ProvinceSummary, RekapData } from '@/lib/types';
-import { X, Activity, CheckCircle2, AlertCircle } from 'lucide-react';
+import { X, Activity, CheckCircle2, AlertCircle, Download, Loader2 } from 'lucide-react';
 import RekapChart from './RekapChart';
+import { exportRekapToImage } from '@/lib/exportRekapImage';
 
 interface RekapModalProps {
   title?: string;
@@ -34,6 +35,25 @@ export default function RekapModal({
     propTotalPoints !== undefined
       ? propTotalPoints
       : summary?.totalSurveyPoints || 0;
+
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = async () => {
+    if (!activeRekap) return;
+    try {
+      setIsDownloading(true);
+      await exportRekapToImage({
+        title: displayTitle,
+        level,
+        rekap: activeRekap,
+        totalSurveyPoints: totalPoints,
+      });
+    } catch (err) {
+      console.error('Failed to export rekap image:', err);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   const { sectors, overallSeries, statusSeries } = activeRekap;
   const timeLabels = ['T-1', 'T-0', 'T+1', 'T+2', 'T+3', 'T+4'];
@@ -71,7 +91,8 @@ export default function RekapModal({
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition"
+            className="p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+            aria-label="Tutup Modal"
           >
             <X className="w-5 h-5" />
           </button>
@@ -85,12 +106,26 @@ export default function RekapModal({
               <span className="text-slate-500 block text-[11px] mb-0.5">
                 Status Pemulihan Keseluruhan:
               </span>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span className="font-bold text-sm text-emerald-700">
-                  {statusSeries?.t_0 || 'Pulih'}
-                </span>
-              </div>
+              {(() => {
+                const overallStatus = statusSeries?.t_0 || 'Pulih';
+                const isPulih = !overallStatus.toLowerCase().includes('belum');
+                return (
+                  <div className="flex items-center gap-2">
+                    {isPulih ? (
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    ) : (
+                      <AlertCircle className="w-4 h-4 text-rose-600" />
+                    )}
+                    <span
+                      className={`font-bold text-sm ${
+                        isPulih ? 'text-emerald-700' : 'text-rose-600'
+                      }`}
+                    >
+                      {overallStatus}
+                    </span>
+                  </div>
+                );
+              })()}
             </div>
             <div className="text-right">
               <span className="text-slate-500 block text-[11px] mb-0.5">
@@ -171,7 +206,13 @@ export default function RekapModal({
                     <td className="py-2.5 px-2 text-center font-mono text-blue-700">
                       -
                     </td>
-                    <td className="py-2.5 px-3 text-right text-emerald-700 font-bold">
+                    <td
+                      className={`py-2.5 px-3 text-right font-bold ${
+                        !(statusSeries?.t_0 || 'Pulih').toLowerCase().includes('belum')
+                          ? 'text-emerald-700'
+                          : 'text-rose-600'
+                      }`}
+                    >
                       {statusSeries?.t_0 || 'Pulih'}
                     </td>
                   </tr>
@@ -190,13 +231,30 @@ export default function RekapModal({
         </div>
 
         {/* Modal Footer */}
-        <div className="p-3.5 sm:p-4 border-t border-slate-200 bg-slate-50/80 flex justify-end">
-          <button
-            onClick={onClose}
-            className="py-1.5 px-4 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-medium transition shadow-2xs"
-          >
-            Tutup
-          </button>
+        <div className="p-3.5 sm:p-4 border-t border-slate-200 bg-slate-50/80 flex items-center justify-between">
+          <div className="text-[11px] text-slate-500 hidden sm:block">
+            Ina PDRI 2026 &bull; Evaluasi Pemulihan Bencana Indonesia
+          </div>
+          <div className="flex items-center gap-2 ml-auto">
+            <button
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className="py-1.5 px-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold transition shadow-2xs flex items-center gap-1.5 disabled:opacity-60 cursor-pointer"
+            >
+              {isDownloading ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Download className="w-3.5 h-3.5" />
+              )}
+              <span>{isDownloading ? 'Menyiapkan...' : 'Unduh Gambar (PNG)'}</span>
+            </button>
+            <button
+              onClick={onClose}
+              className="py-1.5 px-4 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-medium transition shadow-2xs cursor-pointer"
+            >
+              Tutup
+            </button>
+          </div>
         </div>
       </div>
     </div>

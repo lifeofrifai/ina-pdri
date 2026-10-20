@@ -516,15 +516,30 @@ export default function MapLibreView({
 
       if (kabPoints.length > 0) {
         const bounds = new LngLatBounds();
+        let validCount = 0;
         kabPoints.forEach((f) => {
           const [lng, lat] = f.geometry.coordinates;
-          bounds.extend([lng, lat]);
+          if (
+            typeof lng === 'number' &&
+            typeof lat === 'number' &&
+            !isNaN(lng) &&
+            !isNaN(lat) &&
+            lng >= -180 &&
+            lng <= 180 &&
+            lat >= -90 &&
+            lat <= 90
+          ) {
+            bounds.extend([lng, lat]);
+            validCount++;
+          }
         });
-        map.fitBounds(bounds, {
-          padding: 80,
-          maxZoom: 13, // High zoom so points are immediately unclustered and visible!
-          duration: 900,
-        });
+        if (validCount > 0) {
+          map.fitBounds(bounds, {
+            padding: 80,
+            maxZoom: 13, // High zoom so points are immediately unclustered and visible!
+            duration: 900,
+          });
+        }
         return;
       }
     }
@@ -537,15 +552,30 @@ export default function MapLibreView({
 
       if (provPoints.length > 0) {
         const bounds = new LngLatBounds();
+        let validCount = 0;
         provPoints.forEach((f) => {
           const [lng, lat] = f.geometry.coordinates;
-          bounds.extend([lng, lat]);
+          if (
+            typeof lng === 'number' &&
+            typeof lat === 'number' &&
+            !isNaN(lng) &&
+            !isNaN(lat) &&
+            lng >= -180 &&
+            lng <= 180 &&
+            lat >= -90 &&
+            lat <= 90
+          ) {
+            bounds.extend([lng, lat]);
+            validCount++;
+          }
         });
-        map.fitBounds(bounds, {
-          padding: 60,
-          maxZoom: 9.5,
-          duration: 900,
-        });
+        if (validCount > 0) {
+          map.fitBounds(bounds, {
+            padding: 60,
+            maxZoom: 9.5,
+            duration: 900,
+          });
+        }
         return;
       }
     }

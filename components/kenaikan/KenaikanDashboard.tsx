@@ -500,7 +500,7 @@ export default function KenaikanDashboard({ kenaikanData }: KenaikanDashboardPro
                 ) : (
                   filteredData.map((item, idx) => {
                     const isExpanded = expandedId === item.id;
-                    const isPulih = item.kesimpulan.toLowerCase() === 'pulih';
+                    const isPulih = !item.kesimpulan.toLowerCase().includes('belum');
                     const kenaikanVal = item.kenaikan.rataRata ?? 0;
 
                     return (

@@ -53,6 +53,36 @@ def excel_date_to_str(val):
         pass
     return str(val).strip()
 
+def clean_coordinate(val, is_lat=True):
+    if val is None:
+        return None
+    try:
+        v = float(val)
+    except (ValueError, TypeError):
+        return None
+    
+    # Auto-fix missing decimal places (e.g. -257977.0 -> -2.57977, 1051971.0 -> 105.1971)
+    if is_lat:
+        while abs(v) > 12:
+            v /= 10.0
+    else:
+        while v > 150:
+            v /= 10.0
+        while 0 < v < 90:
+            v *= 10.0
+    return round(v, 7)
+
+def clean_altitude(val):
+    if val is None:
+        return 0.0
+    try:
+        v = float(val)
+        while abs(v) > 5000:
+            v /= 10.0
+        return round(v, 1)
+    except:
+        return 0.0
+
 def clean_disaster_type(raw_val):
     if not raw_val:
         return 'Lainnya'
@@ -152,18 +182,12 @@ def main():
             if not lat_val or not lng_val:
                 continue
 
-            try:
-                lat = float(lat_val)
-                lng = float(lng_val)
-            except ValueError:
+            lat = clean_coordinate(lat_val, is_lat=True)
+            lng = clean_coordinate(lng_val, is_lat=False)
+            if lat is None or lng is None:
                 continue
 
-            alt = 0.0
-            if cells.get(col_alt):
-                try:
-                    alt = round(float(cells.get(col_alt)), 1)
-                except:
-                    alt = 0.0
+            alt = clean_altitude(cells.get(col_alt))
 
             prec = 0.0
             if cells.get(col_prec):

@@ -365,9 +365,21 @@ export default function Sidebar({
                     Indeks Rekap {selectedKabupaten}
                   </span>
                 </span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 shrink-0">
-                  {rekapObj.statusSeries?.t_0 || 'Pulih'}
-                </span>
+                {(() => {
+                  const statusVal = rekapObj.statusSeries?.t_0 || 'Pulih';
+                  const isPulih = !statusVal.toLowerCase().includes('belum');
+                  return (
+                    <span
+                      className={`px-2 py-0.5 rounded text-[10px] font-semibold shrink-0 border ${
+                        isPulih
+                          ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                          : 'bg-rose-100 text-rose-700 border-rose-300'
+                      }`}
+                    >
+                      {statusVal}
+                    </span>
+                  );
+                })()}
               </div>
 
               <p className="text-[11px] text-slate-600">
@@ -377,7 +389,7 @@ export default function Sidebar({
               {onOpenRekapModal && (
                 <button
                   onClick={onOpenRekapModal}
-                  className="w-full py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-medium transition shadow-xs flex items-center justify-center gap-1"
+                  className="w-full py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold transition shadow-xs flex items-center justify-center gap-1 cursor-pointer"
                 >
                   <span>Lihat Detail Indeks & Grafik</span>
                   <span>&rarr;</span>
