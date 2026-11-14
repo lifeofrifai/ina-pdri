@@ -1,9 +1,9 @@
 {
   "nationalSummary": {
-    "rataRataPerSektorTAkhir": 105.16,
-    "rataRataKenaikan": 5.79,
-    "totalWilayah": 42,
-    "totalPulih": 37,
+    "rataRataPerSektorTAkhir": 104.91,
+    "rataRataKenaikan": 5.6,
+    "totalWilayah": 43,
+    "totalPulih": 38,
     "totalBelumPulih": 5
   },
   "data": [
@@ -14,61 +14,61 @@
       "series": {
         "permukiman": {
           "t_min_1": 100.0,
-          "t_0": 100.45,
-          "t_plus_1": 103.62,
-          "t_plus_2": 104.89,
-          "t_plus_3": 108.43,
-          "t_plus_4": null
+          "t_0": 99.03,
+          "t_plus_1": 103.65,
+          "t_plus_2": 105.97,
+          "t_plus_3": 110.06,
+          "t_plus_4": 110.66
         },
         "infrastruktur": {
           "t_min_1": 100.0,
-          "t_0": 100.14,
-          "t_plus_1": 101.73,
-          "t_plus_2": 105.23,
-          "t_plus_3": 107.86,
-          "t_plus_4": null
+          "t_0": 99.84,
+          "t_plus_1": 101.08,
+          "t_plus_2": 101.41,
+          "t_plus_3": 102.46,
+          "t_plus_4": 102.73
         },
         "sosial": {
           "t_min_1": 100.0,
-          "t_0": 100.14,
-          "t_plus_1": 101.23,
-          "t_plus_2": 102.88,
-          "t_plus_3": 103.19,
-          "t_plus_4": null
+          "t_0": 100.42,
+          "t_plus_1": 100.83,
+          "t_plus_2": 101.29,
+          "t_plus_3": 101.92,
+          "t_plus_4": 102.2
         },
         "ekonomi": {
           "t_min_1": 100.0,
-          "t_0": 102.28,
-          "t_plus_1": 104.51,
-          "t_plus_2": 107.39,
-          "t_plus_3": 110.43,
-          "t_plus_4": null
+          "t_0": 98.25,
+          "t_plus_1": 112.53,
+          "t_plus_2": 113.06,
+          "t_plus_3": 116.72,
+          "t_plus_4": 116.45
         },
         "multisektor": {
           "t_min_1": 100.0,
-          "t_0": 99.55,
-          "t_plus_1": 101.77,
-          "t_plus_2": 104.53,
-          "t_plus_3": 106.33,
-          "t_plus_4": null
+          "t_0": 100.0,
+          "t_plus_1": 100.98,
+          "t_plus_2": 101.45,
+          "t_plus_3": 101.94,
+          "t_plus_4": 101.82
         }
       },
       "nilaiTAkhir": {
-        "permukiman": 108.43,
-        "infrastruktur": 107.86,
-        "sosial": 103.19,
-        "ekonomi": 110.43,
-        "multisektor": 106.33,
-        "rataRata": 107.25
+        "permukiman": 110.06,
+        "infrastruktur": 102.46,
+        "sosial": 101.92,
+        "ekonomi": 116.72,
+        "multisektor": 101.94,
+        "rataRata": 106.62
       },
       "kesimpulan": "Pulih",
       "kenaikan": {
-        "permukiman": 7.98,
-        "infrastruktur": 7.72,
-        "sosial": 3.05,
-        "ekonomi": 8.15,
-        "multisektor": 6.78,
-        "rataRata": 6.74
+        "permukiman": 11.03,
+        "infrastruktur": 2.62,
+        "sosial": 1.5,
+        "ekonomi": 18.47,
+        "multisektor": 1.94,
+        "rataRata": 7.11
       }
     },
     {
@@ -334,65 +334,129 @@
       "series": {
         "permukiman": {
           "t_min_1": 100.0,
-          "t_0": 100.91,
-          "t_plus_1": 103.73,
-          "t_plus_2": 106.73,
-          "t_plus_3": 107.73,
-          "t_plus_4": 112.85
+          "t_0": 100.45,
+          "t_plus_1": 103.02,
+          "t_plus_2": 104.52,
+          "t_plus_3": 105.02,
+          "t_plus_4": null
         },
         "infrastruktur": {
           "t_min_1": 100.0,
-          "t_0": 100.33,
-          "t_plus_1": 104.76,
-          "t_plus_2": 109.93,
-          "t_plus_3": 116.27,
-          "t_plus_4": 121.98
+          "t_0": 100.16,
+          "t_plus_1": 102.66,
+          "t_plus_2": 104.62,
+          "t_plus_3": 108.1,
+          "t_plus_4": null
         },
         "sosial": {
           "t_min_1": 100.0,
           "t_0": 100.0,
-          "t_plus_1": 101.13,
-          "t_plus_2": 101.13,
-          "t_plus_3": 101.83,
-          "t_plus_4": 102.23
+          "t_plus_1": 100.46,
+          "t_plus_2": 100.57,
+          "t_plus_3": 100.92,
+          "t_plus_4": null
         },
         "ekonomi": {
           "t_min_1": 100.0,
           "t_0": 100.0,
-          "t_plus_1": 103.67,
-          "t_plus_2": 109.67,
-          "t_plus_3": 109.67,
+          "t_plus_1": 102.04,
+          "t_plus_2": 105.37,
+          "t_plus_3": 106.6,
           "t_plus_4": 113.67
         },
         "multisektor": {
           "t_min_1": 100.0,
-          "t_0": 100.0,
-          "t_plus_1": 101.09,
-          "t_plus_2": 97.45,
-          "t_plus_3": 98.45,
-          "t_plus_4": 98.45
+          "t_0": 100.05,
+          "t_plus_1": 94.21,
+          "t_plus_2": 92.39,
+          "t_plus_3": 92.84,
+          "t_plus_4": null
         }
       },
       "nilaiTAkhir": {
-        "permukiman": 112.85,
-        "infrastruktur": 121.98,
-        "sosial": 102.23,
+        "permukiman": 105.02,
+        "infrastruktur": 108.1,
+        "sosial": 100.92,
         "ekonomi": 113.67,
-        "multisektor": 98.45,
-        "rataRata": 109.84
+        "multisektor": 92.84,
+        "rataRata": 104.11
       },
       "kesimpulan": "Pulih",
       "kenaikan": {
-        "permukiman": 11.94,
-        "infrastruktur": 21.65,
-        "sosial": 2.23,
+        "permukiman": 4.56,
+        "infrastruktur": 7.93,
+        "sosial": 0.92,
         "ekonomi": 13.67,
-        "multisektor": -1.55,
-        "rataRata": 9.59
+        "multisektor": -7.21,
+        "rataRata": 3.97
       }
     },
     {
       "id": 7,
+      "provinsi": "Sumatera Barat",
+      "kabupaten": "Pesisir Selatan",
+      "series": {
+        "permukiman": {
+          "t_min_1": 100.0,
+          "t_0": 89.21,
+          "t_plus_1": 106.25,
+          "t_plus_2": 106.55,
+          "t_plus_3": null,
+          "t_plus_4": null
+        },
+        "infrastruktur": {
+          "t_min_1": 100.0,
+          "t_0": 98.63,
+          "t_plus_1": 99.45,
+          "t_plus_2": 99.45,
+          "t_plus_3": null,
+          "t_plus_4": null
+        },
+        "sosial": {
+          "t_min_1": 100.0,
+          "t_0": 99.73,
+          "t_plus_1": 99.73,
+          "t_plus_2": 99.7,
+          "t_plus_3": null,
+          "t_plus_4": null
+        },
+        "ekonomi": {
+          "t_min_1": 100.0,
+          "t_0": 99.32,
+          "t_plus_1": 100.02,
+          "t_plus_2": 100.02,
+          "t_plus_3": null,
+          "t_plus_4": null
+        },
+        "multisektor": {
+          "t_min_1": 100.0,
+          "t_0": 96.96,
+          "t_plus_1": 100.28,
+          "t_plus_2": 100.28,
+          "t_plus_3": null,
+          "t_plus_4": null
+        }
+      },
+      "nilaiTAkhir": {
+        "permukiman": 106.55,
+        "infrastruktur": 99.45,
+        "sosial": 99.7,
+        "ekonomi": 100.02,
+        "multisektor": 100.28,
+        "rataRata": 101.2
+      },
+      "kesimpulan": "Pulih",
+      "kenaikan": {
+        "permukiman": 17.34,
+        "infrastruktur": 0.81,
+        "sosial": -0.02,
+        "ekonomi": 0.7,
+        "multisektor": 3.32,
+        "rataRata": 4.43
+      }
+    },
+    {
+      "id": 8,
       "provinsi": "Sumatera Selatan",
       "kabupaten": "Banyuasin",
       "series": {
@@ -456,7 +520,7 @@
       }
     },
     {
-      "id": 8,
+      "id": 9,
       "provinsi": "Sumatera Selatan",
       "kabupaten": "Empat Lawang",
       "series": {
@@ -520,7 +584,7 @@
       }
     },
     {
-      "id": 9,
+      "id": 10,
       "provinsi": "Sumatera Selatan",
       "kabupaten": "Musi Banyuasin",
       "series": {
@@ -584,7 +648,7 @@
       }
     },
     {
-      "id": 10,
+      "id": 11,
       "provinsi": "Sumatera Selatan",
       "kabupaten": "Musi Rawas",
       "series": {
@@ -648,7 +712,7 @@
       }
     },
     {
-      "id": 11,
+      "id": 12,
       "provinsi": "Sumatera Selatan",
       "kabupaten": "Musi Rawas Utara",
       "series": {
@@ -712,7 +776,7 @@
       }
     },
     {
-      "id": 12,
+      "id": 13,
       "provinsi": "Sumatera Selatan",
       "kabupaten": "Ogan Komering Ulu",
       "series": {
@@ -776,7 +840,7 @@
       }
     },
     {
-      "id": 13,
+      "id": 14,
       "provinsi": "Bengkulu",
       "kabupaten": "Kepahiang",
       "series": {
@@ -840,31 +904,31 @@
       }
     },
     {
-      "id": 14,
+      "id": 15,
       "provinsi": "Jawa Barat",
       "kabupaten": "Bandung Barat",
       "series": {
         "permukiman": {
           "t_min_1": 100.0,
-          "t_0": 82.27,
-          "t_plus_1": 100.2,
-          "t_plus_2": 106.94,
+          "t_0": 87.03,
+          "t_plus_1": 103.5,
+          "t_plus_2": 110.82,
           "t_plus_3": 114.69,
           "t_plus_4": null
         },
         "infrastruktur": {
           "t_min_1": 100.0,
-          "t_0": 101.46,
-          "t_plus_1": 106.5,
-          "t_plus_2": 107.63,
+          "t_0": 100.85,
+          "t_plus_1": 104.65,
+          "t_plus_2": 105.67,
           "t_plus_3": 116.41,
           "t_plus_4": null
         },
         "sosial": {
           "t_min_1": 100.0,
-          "t_0": 101.76,
-          "t_plus_1": 104.63,
-          "t_plus_2": 105.24,
+          "t_0": 101.26,
+          "t_plus_1": 103.31,
+          "t_plus_2": 103.74,
           "t_plus_3": 106.09,
           "t_plus_4": null
         },
@@ -878,9 +942,9 @@
         },
         "multisektor": {
           "t_min_1": 100.0,
-          "t_0": 104.46,
-          "t_plus_1": 107.33,
-          "t_plus_2": 107.31,
+          "t_0": 104.88,
+          "t_plus_1": 107.28,
+          "t_plus_2": 106.96,
           "t_plus_3": 113.81,
           "t_plus_4": null
         }
@@ -895,16 +959,16 @@
       },
       "kesimpulan": "Pulih",
       "kenaikan": {
-        "permukiman": 32.42,
-        "infrastruktur": 14.95,
-        "sosial": 4.32,
+        "permukiman": 27.66,
+        "infrastruktur": 15.56,
+        "sosial": 4.83,
         "ekonomi": 0.0,
-        "multisektor": 9.35,
-        "rataRata": 12.21
+        "multisektor": 8.93,
+        "rataRata": 11.4
       }
     },
     {
-      "id": 15,
+      "id": 16,
       "provinsi": "Jawa Barat",
       "kabupaten": "Kota Bogor",
       "series": {
@@ -968,7 +1032,7 @@
       }
     },
     {
-      "id": 16,
+      "id": 17,
       "provinsi": "Jawa Barat",
       "kabupaten": "Garut",
       "series": {
@@ -1032,7 +1096,7 @@
       }
     },
     {
-      "id": 17,
+      "id": 18,
       "provinsi": "Jawa Barat",
       "kabupaten": "Bandung",
       "series": {
@@ -1096,7 +1160,7 @@
       }
     },
     {
-      "id": 18,
+      "id": 19,
       "provinsi": "Jawa Tengah",
       "kabupaten": "Kebumen",
       "series": {
@@ -1160,7 +1224,7 @@
       }
     },
     {
-      "id": 19,
+      "id": 20,
       "provinsi": "Jawa Timur",
       "kabupaten": "Prov. Jawa Timur",
       "series": {
@@ -1224,7 +1288,7 @@
       }
     },
     {
-      "id": 20,
+      "id": 21,
       "provinsi": "Jawa Timur",
       "kabupaten": "Mojokerto",
       "series": {
@@ -1288,7 +1352,7 @@
       }
     },
     {
-      "id": 21,
+      "id": 22,
       "provinsi": "Jawa Timur",
       "kabupaten": "Sampang",
       "series": {
@@ -1352,7 +1416,7 @@
       }
     },
     {
-      "id": 22,
+      "id": 23,
       "provinsi": "Jawa Timur",
       "kabupaten": "Gresik",
       "series": {
@@ -1416,7 +1480,7 @@
       }
     },
     {
-      "id": 23,
+      "id": 24,
       "provinsi": "Nusa Tenggara Barat",
       "kabupaten": "Bima",
       "series": {
@@ -1480,7 +1544,7 @@
       }
     },
     {
-      "id": 24,
+      "id": 25,
       "provinsi": "Nusa Tenggara Barat",
       "kabupaten": "Dompu",
       "series": {
@@ -1544,7 +1608,7 @@
       }
     },
     {
-      "id": 25,
+      "id": 26,
       "provinsi": "Kalimantan Selatan",
       "kabupaten": "Hulu Sungai Selatan",
       "series": {
@@ -1608,7 +1672,7 @@
       }
     },
     {
-      "id": 26,
+      "id": 27,
       "provinsi": "Sulawesi Utara",
       "kabupaten": "Kota Bitung",
       "series": {
@@ -1672,7 +1736,7 @@
       }
     },
     {
-      "id": 27,
+      "id": 28,
       "provinsi": "Sulawesi Tengah",
       "kabupaten": "Banggai Kepulauan",
       "series": {
@@ -1736,7 +1800,7 @@
       }
     },
     {
-      "id": 28,
+      "id": 29,
       "provinsi": "Sulawesi Tengah",
       "kabupaten": "Poso",
       "series": {
@@ -1800,7 +1864,7 @@
       }
     },
     {
-      "id": 29,
+      "id": 30,
       "provinsi": "Sulawesi Tengah",
       "kabupaten": "Prov. Sulawesi Tengah",
       "series": {
@@ -1864,7 +1928,7 @@
       }
     },
     {
-      "id": 30,
+      "id": 31,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Enrekang",
       "series": {
@@ -1928,7 +1992,7 @@
       }
     },
     {
-      "id": 31,
+      "id": 32,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Luwu",
       "series": {
@@ -1992,7 +2056,7 @@
       }
     },
     {
-      "id": 32,
+      "id": 33,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Luwu Timur",
       "series": {
@@ -2056,7 +2120,7 @@
       }
     },
     {
-      "id": 33,
+      "id": 34,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Pinrang",
       "series": {
@@ -2120,7 +2184,7 @@
       }
     },
     {
-      "id": 34,
+      "id": 35,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Tana Toraja",
       "series": {
@@ -2184,7 +2248,7 @@
       }
     },
     {
-      "id": 35,
+      "id": 36,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Toraja Utara",
       "series": {
@@ -2248,7 +2312,7 @@
       }
     },
     {
-      "id": 36,
+      "id": 37,
       "provinsi": "Sulawesi Selatan",
       "kabupaten": "Luwu Utara",
       "series": {
@@ -2312,7 +2376,7 @@
       }
     },
     {
-      "id": 37,
+      "id": 38,
       "provinsi": "Sulawesi Tenggara",
       "kabupaten": "Buton",
       "series": {
@@ -2376,7 +2440,7 @@
       }
     },
     {
-      "id": 38,
+      "id": 39,
       "provinsi": "Sulawesi Tenggara",
       "kabupaten": "Konawe",
       "series": {
@@ -2440,71 +2504,71 @@
       }
     },
     {
-      "id": 39,
+      "id": 40,
       "provinsi": "Maluku",
       "kabupaten": "Maluku Barat Daya",
       "series": {
         "permukiman": {
           "t_min_1": 100.0,
-          "t_0": 95.78,
-          "t_plus_1": 96.02,
-          "t_plus_2": 100.57,
-          "t_plus_3": 100.57,
-          "t_plus_4": null
+          "t_0": 100.0,
+          "t_plus_1": 100.0,
+          "t_plus_2": 100.0,
+          "t_plus_3": 100.0,
+          "t_plus_4": 100.0
         },
         "infrastruktur": {
-          "t_min_1": 100.0,
-          "t_0": 100.0,
-          "t_plus_1": 99.57,
-          "t_plus_2": 99.96,
-          "t_plus_3": 100.26,
-          "t_plus_4": null
-        },
-        "sosial": {
-          "t_min_1": 100.0,
-          "t_0": 99.99,
-          "t_plus_1": 100.1,
-          "t_plus_2": 99.98,
-          "t_plus_3": 99.62,
-          "t_plus_4": null
-        },
-        "ekonomi": {
           "t_min_1": 100.0,
           "t_0": 100.0,
           "t_plus_1": 100.0,
           "t_plus_2": 100.0,
           "t_plus_3": 100.0,
+          "t_plus_4": 100.0
+        },
+        "sosial": {
+          "t_min_1": 100.0,
+          "t_0": 100.0,
+          "t_plus_1": 100.0,
+          "t_plus_2": 100.0,
+          "t_plus_3": 100.0,
+          "t_plus_4": 100.0
+        },
+        "ekonomi": {
+          "t_min_1": null,
+          "t_0": null,
+          "t_plus_1": null,
+          "t_plus_2": null,
+          "t_plus_3": null,
           "t_plus_4": null
         },
         "multisektor": {
-          "t_min_1": 100.0,
-          "t_0": 101.73,
-          "t_plus_1": 102.55,
-          "t_plus_2": 103.05,
-          "t_plus_3": 102.38,
+          "t_min_1": null,
+          "t_0": null,
+          "t_plus_1": null,
+          "t_plus_2": null,
+          "t_plus_3": null,
           "t_plus_4": null
         }
       },
       "nilaiTAkhir": {
-        "permukiman": 100.57,
-        "infrastruktur": 100.26,
-        "sosial": 99.62,
-        "ekonomi": 100.0,
-        "multisektor": 102.38,
-        "rataRata": 100.57
+        "permukiman": 100.0,
+        "infrastruktur": 100.0,
+        "sosial": 100.0,
+        "ekonomi": null,
+        "multisektor": null,
+        "rataRata": 100.0
       },
       "kesimpulan": "Pulih",
       "kenaikan": {
-        "permukiman": 4.8,
-        "infrastruktur": 0.26,
-        "sosial": -0.37,
+        "permukiman": 0.0,
+        "infrastruktur": 0.0,
+        "sosial": 0.0,
         "ekonomi": 0.0,
-        "multisektor": 0.65,
-        "rataRata": 1.07
+        "multisektor": 0.0,
+        "rataRata": 0.0
       }
     },
     {
-      "id": 40,
+      "id": 41,
       "provinsi": "Maluku",
       "kabupaten": "Seram Bagian Timur",
       "series": {
@@ -2568,7 +2632,7 @@
       }
     },
     {
-      "id": 41,
+      "id": 42,
       "provinsi": "Maluku Utara",
       "kabupaten": "Kota Tidore Kepulauan",
       "series": {
@@ -2632,7 +2696,7 @@
       }
     },
     {
-      "id": 42,
+      "id": 43,
       "provinsi": "Papua",
       "kabupaten": "Kepulauan Yapen",
       "series": {

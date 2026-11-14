@@ -15,7 +15,7 @@ import datetime
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 
-EXCEL_PATH = 'data/Ina PDRI 2026 - FINAL.xlsx'
+EXCEL_PATH = 'data/Ina PDRI 2026 - FIX FINAL.xlsx'
 OUTPUT_GEOJSON = 'public/data/ina_pdri_points.geojson'
 OUTPUT_SUMMARY = 'public/data/ina_pdri_summary.json'
 OUTPUT_META = 'public/data/ina_pdri_meta.json'
@@ -122,11 +122,12 @@ def main():
             for r in rels_tree.findall('.//ns:Relationship', RELS_NS)
         }
 
-        # 1. Process Sheet 1: Survey Ina PDRI Tahun 2026
-        sheet1_target = id_to_target[sheets['Survey Ina PDRI Tahun 2026']]
+        # 1. Process Sheet 1: Survey Ina PDRI
+        survey_sheet_name = 'Survey Ina PDRI' if 'Survey Ina PDRI' in sheets else ('Survey Ina PDRI Tahun 2026' if 'Survey Ina PDRI Tahun 2026' in sheets else list(sheets.keys())[0])
+        sheet1_target = id_to_target[sheets[survey_sheet_name]]
         tree1 = ET.fromstring(z.read('xl/' + sheet1_target))
         rows1 = tree1.findall('.//ns:row', NS)
-        print(f"Sheet 1 has {len(rows1)} rows.")
+        print(f"Sheet '{survey_sheet_name}' has {len(rows1)} rows.")
 
         # Map header columns
         header = {}
@@ -141,21 +142,22 @@ def main():
 
         rev_header = {v: k for k, v in header.items() if v}
 
-        col_prov = rev_header.get('Provinsi', 'B')
-        col_kab = rev_header.get('Kabupaten/Kota', 'C')
-        col_kec = rev_header.get('Kecamatan', 'D')
-        col_desa = rev_header.get('Desa/Kelurahan', 'E')
-        col_alamat = rev_header.get('Alamat (Jalan/kampung)', 'F')
-        col_lat = rev_header.get('_Titik Lokasi_latitude', 'H')
-        col_lng = rev_header.get('_Titik Lokasi_longitude', 'I')
-        col_alt = rev_header.get('_Titik Lokasi_altitude', 'J')
-        col_prec = rev_header.get('_Titik Lokasi_precision', 'K')
-        col_year = rev_header.get('Tahun terjadi bencana (T-0)', 'L')
-        col_disaster = rev_header.get('Jenis Bencana', 'R')
-        col_date = rev_header.get('Tanggal Survey', 'Z')
-        col_petugas = rev_header.get('Pilih Petugas', 'AA')
-        col_photo = rev_header.get('Ambil foto yang menunjukan kualitas air_URL', 'UX')
-        col_sig = rev_header.get('Tanda Tangan Petugas_URL', 'AD')
+        col_prov = rev_header.get('Provinsi', 'A')
+        col_kab = rev_header.get('Kabupaten/Kota', 'B')
+        col_kec = rev_header.get('Kecamatan', 'C')
+        col_desa = rev_header.get('Desa/Kelurahan', 'D')
+        col_alamat = rev_header.get('Alamat (Jalan/kampung)', 'E')
+        col_titik = rev_header.get('Titik Lokasi')
+        col_lat = rev_header.get('_Titik Lokasi_latitude', 'G')
+        col_lng = rev_header.get('_Titik Lokasi_longitude', 'H')
+        col_alt = rev_header.get('_Titik Lokasi_altitude', 'I')
+        col_prec = rev_header.get('_Titik Lokasi_precision', 'J')
+        col_year = rev_header.get('Tahun terjadi bencana (T-0)', 'K')
+        col_disaster = rev_header.get('Jenis Bencana', 'Q')
+        col_date = rev_header.get('Tanggal Survey', 'Y')
+        col_petugas = rev_header.get('Pilih Petugas', 'Z')
+        col_photo = rev_header.get('Ambil foto yang menunjukan kualitas air_URL')
+        col_sig = rev_header.get('Tanda Tangan Petugas_URL', 'AC')
 
         features = []
         lats, lngs, alts = [], [], []
@@ -177,24 +179,50 @@ def main():
                     val = shared_strings[int(val)]
                 cells[col_letter] = val
 
-            lat_val = cells.get(col_lat)
-            lng_val = cells.get(col_lng)
-            if not lat_val or not lng_val:
-                continue
-
-            lat = clean_coordinate(lat_val, is_lat=True)
-            lng = clean_coordinate(lng_val, is_lat=False)
-            if lat is None or lng is None:
-                continue
-
-            alt = clean_altitude(cells.get(col_alt))
-
+            lat = None
+            lng = None
+            alt = 0.0
             prec = 0.0
-            if cells.get(col_prec):
+
+            # Priority 1: Exact coordinates from 'Titik Lokasi' string ("lat lng alt precision")
+            titik_val = cells.get(col_titik) if col_titik else None
+            if titik_val and isinstance(titik_val, str) and len(titik_val.strip().split()) >= 2:
+                parts = titik_val.strip().split()
                 try:
-                    prec = round(float(cells.get(col_prec)), 1)
-                except:
-                    prec = 0.0
+                    p_lat = float(parts[0])
+                    p_lng = float(parts[1])
+                    if -90 <= p_lat <= 90 and -180 <= p_lng <= 180:
+                        lat = round(p_lat, 7)
+                        lng = round(p_lng, 7)
+                        if len(parts) >= 3:
+                            try:
+                                alt = round(float(parts[2]), 1)
+                            except:
+                                alt = 0.0
+                        if len(parts) >= 4:
+                            try:
+                                prec = round(float(parts[3]), 1)
+                            except:
+                                prec = 0.0
+                except (ValueError, TypeError):
+                    pass
+
+            # Priority 2: Fallback to separate lat/lng columns with clean_coordinate
+            if lat is None or lng is None:
+                lat_val = cells.get(col_lat)
+                lng_val = cells.get(col_lng)
+                if not lat_val or not lng_val:
+                    continue
+                lat = clean_coordinate(lat_val, is_lat=True)
+                lng = clean_coordinate(lng_val, is_lat=False)
+                if lat is None or lng is None:
+                    continue
+                alt = clean_altitude(cells.get(col_alt))
+                if cells.get(col_prec):
+                    try:
+                        prec = round(float(cells.get(col_prec)), 1)
+                    except:
+                        prec = 0.0
 
             year_val = cells.get(col_year)
             try:
@@ -432,7 +460,7 @@ def main():
 
         kabupaten_rekap_all = {}
         for sname, r_id in sheets.items():
-            if sname not in ['Survey Ina PDRI Tahun 2026', 'Data Olah', 'Rekap Total Data'] and not sname.startswith('Rekap '):
+            if sname not in ['Survey Ina PDRI', 'Survey Ina PDRI Tahun 2026', 'Data Olah', 'Rekap Total Data'] and not sname.startswith('Rekap '):
                 target = id_to_target[r_id]
                 try:
                     kab_rekap = extract_kab_rekap(z, target, shared_strings)
@@ -522,87 +550,95 @@ def main():
                         val = shared_strings[int(val)]
                     cells[col_letter] = val
 
-                if 5 <= r_num <= 46:
-                    prov = cells.get('A')
-                    if prov and prov.strip():
-                        current_prov = prov.strip()
-                    kab = (cells.get('B') or '').strip()
-                    if not kab:
-                        continue
+                if r_num >= 5:
+                    col_a = (cells.get('A') or '').strip()
+                    col_am = (cells.get('AM') or '').strip()
 
-                    entry = {
-                        'id': len(kenaikan_list) + 1,
-                        'provinsi': current_prov,
-                        'kabupaten': kab,
-                        'series': {
-                            'permukiman': {
-                                't_min_1': safe_clean_num(cells.get('C')),
-                                't_0': safe_clean_num(cells.get('D')),
-                                't_plus_1': safe_clean_num(cells.get('E')),
-                                't_plus_2': safe_clean_num(cells.get('F')),
-                                't_plus_3': safe_clean_num(cells.get('G')),
-                                't_plus_4': safe_clean_num(cells.get('H')),
-                            },
-                            'infrastruktur': {
-                                't_min_1': safe_clean_num(cells.get('I')),
-                                't_0': safe_clean_num(cells.get('J')),
-                                't_plus_1': safe_clean_num(cells.get('K')),
-                                't_plus_2': safe_clean_num(cells.get('L')),
-                                't_plus_3': safe_clean_num(cells.get('M')),
-                                't_plus_4': safe_clean_num(cells.get('N')),
-                            },
-                            'sosial': {
-                                't_min_1': safe_clean_num(cells.get('O')),
-                                't_0': safe_clean_num(cells.get('P')),
-                                't_plus_1': safe_clean_num(cells.get('Q')),
-                                't_plus_2': safe_clean_num(cells.get('R')),
-                                't_plus_3': safe_clean_num(cells.get('S')),
-                                't_plus_4': safe_clean_num(cells.get('T')),
-                            },
-                            'ekonomi': {
-                                't_min_1': safe_clean_num(cells.get('U')),
-                                't_0': safe_clean_num(cells.get('V')),
-                                't_plus_1': safe_clean_num(cells.get('W')),
-                                't_plus_2': safe_clean_num(cells.get('X')),
-                                't_plus_3': safe_clean_num(cells.get('Y')),
-                                't_plus_4': safe_clean_num(cells.get('Z')),
-                            },
-                            'multisektor': {
-                                't_min_1': safe_clean_num(cells.get('AA')),
-                                't_0': safe_clean_num(cells.get('AB')),
-                                't_plus_1': safe_clean_num(cells.get('AC')),
-                                't_plus_2': safe_clean_num(cells.get('AD')),
-                                't_plus_3': safe_clean_num(cells.get('AE')),
-                                't_plus_4': safe_clean_num(cells.get('AF')),
-                            }
-                        },
-                        'nilaiTAkhir': {
-                            'permukiman': safe_clean_num(cells.get('AG')),
-                            'infrastruktur': safe_clean_num(cells.get('AH')),
-                            'sosial': safe_clean_num(cells.get('AI')),
-                            'ekonomi': safe_clean_num(cells.get('AJ')),
-                            'multisektor': safe_clean_num(cells.get('AK')),
-                            'rataRata': safe_clean_num(cells.get('AL'))
-                        },
-                        'kesimpulan': (cells.get('AM') or 'Pulih').strip(),
-                        'kenaikan': {
-                            'permukiman': safe_clean_num(cells.get('AN')),
-                            'infrastruktur': safe_clean_num(cells.get('AO')),
-                            'sosial': safe_clean_num(cells.get('AP')),
-                            'ekonomi': safe_clean_num(cells.get('AQ')),
-                            'multisektor': safe_clean_num(cells.get('AR')),
-                            'rataRata': safe_clean_num(cells.get('AS'))
+                    if col_a.lower().startswith('rata') or col_am.lower().startswith('rata'):
+                        nat_summary = {
+                            'rataRataPerSektorTAkhir': safe_clean_num(cells.get('AL')),
+                            'rataRataKenaikan': safe_clean_num(cells.get('AS')),
+                            'totalWilayah': len(kenaikan_list),
+                            'totalPulih': sum(1 for k in kenaikan_list if k['kesimpulan'].lower() == 'pulih'),
+                            'totalBelumPulih': sum(1 for k in kenaikan_list if 'belum' in k['kesimpulan'].lower()),
                         }
-                    }
-                    kenaikan_list.append(entry)
-                elif r_num == 47:
-                    nat_summary = {
-                        'rataRataPerSektorTAkhir': safe_clean_num(cells.get('AL')),
-                        'rataRataKenaikan': safe_clean_num(cells.get('AS')),
-                        'totalWilayah': len(kenaikan_list),
-                        'totalPulih': sum(1 for k in kenaikan_list if k['kesimpulan'].lower() == 'pulih'),
-                        'totalBelumPulih': sum(1 for k in kenaikan_list if 'belum' in k['kesimpulan'].lower()),
-                    }
+                    else:
+                        if col_a and not col_a.lower().startswith('rata'):
+                            current_prov = col_a.strip()
+                        kab = (cells.get('B') or '').strip()
+                        if not kab:
+                            continue
+
+                        entry = {
+                            'id': len(kenaikan_list) + 1,
+                            'provinsi': current_prov,
+                            'kabupaten': kab,
+                            'series': {
+                                'permukiman': {
+                                    't_min_1': safe_clean_num(cells.get('C')),
+                                    't_0': safe_clean_num(cells.get('D')),
+                                    't_plus_1': safe_clean_num(cells.get('E')),
+                                    't_plus_2': safe_clean_num(cells.get('F')),
+                                    't_plus_3': safe_clean_num(cells.get('G')),
+                                    't_plus_4': safe_clean_num(cells.get('H')),
+                                },
+                                'infrastruktur': {
+                                    't_min_1': safe_clean_num(cells.get('I')),
+                                    't_0': safe_clean_num(cells.get('J')),
+                                    't_plus_1': safe_clean_num(cells.get('K')),
+                                    't_plus_2': safe_clean_num(cells.get('L')),
+                                    't_plus_3': safe_clean_num(cells.get('M')),
+                                    't_plus_4': safe_clean_num(cells.get('N')),
+                                },
+                                'sosial': {
+                                    't_min_1': safe_clean_num(cells.get('O')),
+                                    't_0': safe_clean_num(cells.get('P')),
+                                    't_plus_1': safe_clean_num(cells.get('Q')),
+                                    't_plus_2': safe_clean_num(cells.get('R')),
+                                    't_plus_3': safe_clean_num(cells.get('S')),
+                                    't_plus_4': safe_clean_num(cells.get('T')),
+                                },
+                                'ekonomi': {
+                                    't_min_1': safe_clean_num(cells.get('U')),
+                                    't_0': safe_clean_num(cells.get('V')),
+                                    't_plus_1': safe_clean_num(cells.get('W')),
+                                    't_plus_2': safe_clean_num(cells.get('X')),
+                                    't_plus_3': safe_clean_num(cells.get('Y')),
+                                    't_plus_4': safe_clean_num(cells.get('Z')),
+                                },
+                                'multisektor': {
+                                    't_min_1': safe_clean_num(cells.get('AA')),
+                                    't_0': safe_clean_num(cells.get('AB')),
+                                    't_plus_1': safe_clean_num(cells.get('AC')),
+                                    't_plus_2': safe_clean_num(cells.get('AD')),
+                                    't_plus_3': safe_clean_num(cells.get('AE')),
+                                    't_plus_4': safe_clean_num(cells.get('AF')),
+                                }
+                            },
+                            'nilaiTAkhir': {
+                                'permukiman': safe_clean_num(cells.get('AG')),
+                                'infrastruktur': safe_clean_num(cells.get('AH')),
+                                'sosial': safe_clean_num(cells.get('AI')),
+                                'ekonomi': safe_clean_num(cells.get('AJ')),
+                                'multisektor': safe_clean_num(cells.get('AK')),
+                                'rataRata': safe_clean_num(cells.get('AL'))
+                            },
+                            'kesimpulan': (cells.get('AM') or 'Pulih').strip(),
+                            'kenaikan': {
+                                'permukiman': safe_clean_num(cells.get('AN')),
+                                'infrastruktur': safe_clean_num(cells.get('AO')),
+                                'sosial': safe_clean_num(cells.get('AP')),
+                                'ekonomi': safe_clean_num(cells.get('AQ')),
+                                'multisektor': safe_clean_num(cells.get('AR')),
+                                'rataRata': safe_clean_num(cells.get('AS'))
+                            }
+                        }
+                        kenaikan_list.append(entry)
+
+            if nat_summary:
+                nat_summary['totalWilayah'] = len(kenaikan_list)
+                nat_summary['totalPulih'] = sum(1 for k in kenaikan_list if k['kesimpulan'].lower() == 'pulih')
+                nat_summary['totalBelumPulih'] = sum(1 for k in kenaikan_list if 'belum' in k['kesimpulan'].lower())
 
             rekap_kenaikan_doc = {
                 'nationalSummary': nat_summary,

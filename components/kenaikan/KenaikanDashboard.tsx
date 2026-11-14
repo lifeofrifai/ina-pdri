@@ -205,7 +205,7 @@ export default function KenaikanDashboard({ kenaikanData }: KenaikanDashboardPro
               </span>
             </div>
             <span className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-slate-400 truncate">
-              17 Provinsi Indonesia
+              {provinces.length} Provinsi Indonesia
             </span>
           </div>
 
@@ -279,7 +279,7 @@ export default function KenaikanDashboard({ kenaikanData }: KenaikanDashboardPro
               <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 shrink-0" />
               <span>Rata-Rata Kenaikan per Sektor ((T+n) - T0)</span>
             </h3>
-            <span className="text-[10px] sm:text-[11px] text-slate-500">42 Kab/Kota</span>
+            <span className="text-[10px] sm:text-[11px] text-slate-500">{data.length} Kab/Kota</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-2.5">
@@ -417,7 +417,7 @@ export default function KenaikanDashboard({ kenaikanData }: KenaikanDashboardPro
                   onChange={(e) => setSelectedProvinsi(e.target.value)}
                   className="w-full appearance-none bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 pr-8 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer shadow-2xs truncate"
                 >
-                  <option value="ALL">Semua Provinsi (17)</option>
+                  <option value="ALL">Semua Provinsi ({provinces.length})</option>
                   {provinces.map((prov) => (
                     <option key={prov} value={prov}>
                       {prov}

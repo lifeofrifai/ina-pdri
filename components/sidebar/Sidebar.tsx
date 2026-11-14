@@ -162,20 +162,20 @@ export default function Sidebar({
             <span className="font-bold text-blue-600 text-sm">
               {totalFilteredPoints}
               <span className="text-[10px] text-slate-400 font-normal">
-                /{meta?.totalPoints || 762}
+                /{meta?.totalPoints || 887}
               </span>
             </span>
           </div>
           <div className="border-x border-slate-200">
             <span className="block text-xs text-slate-500">Provinsi</span>
             <span className="font-bold text-slate-800 text-sm">
-              {meta?.totalProvinces || 17}
+              {meta?.totalProvinces || (meta?.provinces?.length ?? 19)}
             </span>
           </div>
           <div>
             <span className="block text-xs text-slate-500">Kab/Kota</span>
             <span className="font-bold text-slate-800 text-sm">
-              {meta?.totalKabupaten || 42}
+              {meta?.totalKabupaten || 44}
             </span>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function Sidebar({
               }}
               className="w-full appearance-none bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer pr-8 shadow-2xs"
             >
-              <option value="">Semua Provinsi (17 Provinsi)</option>
+              <option value="">Semua Provinsi ({meta?.provinces?.length || 19} Provinsi)</option>
               {meta?.provinces.map((prov) => (
                 <option key={prov} value={prov}>
                   {prov}

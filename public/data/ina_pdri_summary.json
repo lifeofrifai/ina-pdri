@@ -538,79 +538,10 @@
       },
       "altitudeStats": {
         "min": -60.9,
-        "max": 2018.8,
-        "avg": 138.3
+        "max": 482.5,
+        "avg": 105.4
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 96.93,
-            "t_plus_1": 98.71,
-            "t_plus_2": 101.28,
-            "t_plus_3": 102.65,
-            "t_plus_4": 106.66,
-            "avg": 101.04,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 100.54,
-            "t_plus_1": 103.13,
-            "t_plus_2": 104.74,
-            "t_plus_3": 106.0,
-            "t_plus_4": 106.27,
-            "avg": 103.45,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 100.03,
-            "t_plus_1": 100.77,
-            "t_plus_2": 101.42,
-            "t_plus_3": 101.76,
-            "t_plus_4": 101.79,
-            "avg": 100.96,
-            "status": "Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 101.99,
-            "t_plus_1": 104.15,
-            "t_plus_2": 105.39,
-            "t_plus_3": 105.48,
-            "t_plus_4": 105.19,
-            "avg": 103.7,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 100.04,
-            "t_plus_1": 101.53,
-            "t_plus_2": 102.36,
-            "t_plus_3": 104.39,
-            "t_plus_4": 104.61,
-            "avg": 102.15,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 99.9,
-          "t_plus_1": 101.66,
-          "t_plus_2": 103.04,
-          "t_plus_3": 104.06,
-          "t_plus_4": 104.9
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Belum Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Banyuasin": {
           "sectors": {
@@ -1035,6 +966,96 @@
       }
     },
     {
+      "provinsi": "Sumatera Barat",
+      "totalSurveyPoints": 80,
+      "kabupatenList": [
+        "Pesisir Selatan"
+      ],
+      "disasterBreakdown": {
+        "Banjir Tanah Longsor": 62,
+        "Tanah Longsor Banjir": 14,
+        "Banjir": 4
+      },
+      "altitudeStats": {
+        "min": -69.8,
+        "max": 120.7,
+        "avg": 12.9
+      },
+      "rekap": null,
+      "kabupatenRekap": {
+        "Pesisir Selatan": {
+          "sectors": {
+            "PEMUKIMAN": {
+              "t_min_1": 100.0,
+              "t_0": 89.21,
+              "t_plus_1": 106.25,
+              "t_plus_2": 106.55,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 100.5,
+              "status": "Pulih"
+            },
+            "INFRASTRUKTUR": {
+              "t_min_1": 100.0,
+              "t_0": 98.63,
+              "t_plus_1": 99.45,
+              "t_plus_2": 99.45,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 99.38,
+              "status": "Belum Pulih"
+            },
+            "SOSIAL": {
+              "t_min_1": 100.0,
+              "t_0": 99.73,
+              "t_plus_1": 99.73,
+              "t_plus_2": 99.7,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 99.79,
+              "status": "Belum Pulih"
+            },
+            "EKONOMI": {
+              "t_min_1": 100.0,
+              "t_0": 99.32,
+              "t_plus_1": 100.02,
+              "t_plus_2": 100.02,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 99.84,
+              "status": "Pulih"
+            },
+            "LINTAS SEKTOR": {
+              "t_min_1": 100.0,
+              "t_0": 96.96,
+              "t_plus_1": 100.28,
+              "t_plus_2": 100.28,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 99.38,
+              "status": "Pulih"
+            }
+          },
+          "overallSeries": {
+            "t_min_1": 100.0,
+            "t_0": 96.77,
+            "t_plus_1": 101.14,
+            "t_plus_2": 101.2,
+            "t_plus_3": null,
+            "t_plus_4": null
+          },
+          "statusSeries": {
+            "t_min_1": "Pulih",
+            "t_0": "Belum Pulih",
+            "t_plus_1": "Pulih",
+            "t_plus_2": "Pulih",
+            "t_plus_3": null,
+            "t_plus_4": null
+          }
+        }
+      }
+    },
+    {
       "provinsi": "Jawa Timur",
       "totalSurveyPoints": 78,
       "kabupatenList": [
@@ -1055,76 +1076,7 @@
         "max": 454.8,
         "avg": 108.1
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 100.46,
-            "t_plus_1": 103.22,
-            "t_plus_2": 106.36,
-            "t_plus_3": 112.21,
-            "t_plus_4": 114.0,
-            "avg": 106.04,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 103.08,
-            "t_plus_1": 110.72,
-            "t_plus_2": 115.57,
-            "t_plus_3": 130.02,
-            "t_plus_4": 138.75,
-            "avg": 116.36,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 101.37,
-            "t_plus_1": 105.73,
-            "t_plus_2": 109.39,
-            "t_plus_3": 115.51,
-            "t_plus_4": 120.33,
-            "avg": 108.72,
-            "status": "Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 100.56,
-            "t_plus_1": 101.35,
-            "t_plus_2": 102.7,
-            "t_plus_3": 105.12,
-            "t_plus_4": 108.17,
-            "avg": 102.98,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 101.95,
-            "t_plus_1": 107.16,
-            "t_plus_2": 112.83,
-            "t_plus_3": 121.37,
-            "t_plus_4": 124.31,
-            "avg": 111.27,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 101.48,
-          "t_plus_1": 105.64,
-          "t_plus_2": 109.37,
-          "t_plus_3": 116.84,
-          "t_plus_4": 121.11
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Gresik": {
           "sectors": {
@@ -1410,7 +1362,7 @@
     },
     {
       "provinsi": "Jawa Barat",
-      "totalSurveyPoints": 70,
+      "totalSurveyPoints": 74,
       "kabupatenList": [
         "Bandung",
         "Bandung Barat",
@@ -1418,7 +1370,7 @@
         "Kota Bogor"
       ],
       "disasterBreakdown": {
-        "Tanah Longsor": 35,
+        "Tanah Longsor": 39,
         "Gempa Bumi": 26,
         "Tanah Longsor Banjir": 7,
         "Banjir Tanah Longsor": 1,
@@ -1427,78 +1379,9 @@
       "altitudeStats": {
         "min": 0.0,
         "max": 1562.3,
-        "avg": 785.6
+        "avg": 783.2
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 80.0,
-            "t_0": 69.18,
-            "t_plus_1": 85.09,
-            "t_plus_2": 97.23,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 82.88,
-            "status": "Belum Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 80.0,
-            "t_0": 80.42,
-            "t_plus_1": 82.23,
-            "t_plus_2": 83.26,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 81.48,
-            "status": "Belum Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 80.0,
-            "t_0": 80.24,
-            "t_plus_1": 81.24,
-            "t_plus_2": 80.66,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 80.53,
-            "status": "Belum Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 80.0,
-            "t_0": 80.27,
-            "t_plus_1": 81.07,
-            "t_plus_2": 84.4,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 81.43,
-            "status": "Belum Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 80.0,
-            "t_0": 81.66,
-            "t_plus_1": 84.39,
-            "t_plus_2": 84.76,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 82.7,
-            "status": "Belum Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 80.0,
-          "t_0": 78.35,
-          "t_plus_1": 82.8,
-          "t_plus_2": 86.06,
-          "t_plus_3": null,
-          "t_plus_4": null
-        },
-        "statusSeries": {
-          "t_min_1": "Belum Pulih",
-          "t_0": "Belum Pulih",
-          "t_plus_1": "Belum Pulih",
-          "t_plus_2": "Belum Pulih",
-          "t_plus_3": "#DIV/0!",
-          "t_plus_4": "#DIV/0!"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Bandung": {
           "sectors": {
@@ -1574,32 +1457,32 @@
           "sectors": {
             "PEMUKIMAN": {
               "t_min_1": 100.0,
-              "t_0": 82.27,
-              "t_plus_1": 100.2,
-              "t_plus_2": 106.94,
+              "t_0": 87.03,
+              "t_plus_1": 103.5,
+              "t_plus_2": 110.82,
               "t_plus_3": 114.69,
               "t_plus_4": null,
-              "avg": 100.82,
+              "avg": 103.21,
               "status": "Pulih"
             },
             "INFRASTRUKTUR": {
               "t_min_1": 100.0,
-              "t_0": 101.46,
-              "t_plus_1": 106.5,
-              "t_plus_2": 107.63,
+              "t_0": 100.85,
+              "t_plus_1": 104.65,
+              "t_plus_2": 105.67,
               "t_plus_3": 116.41,
               "t_plus_4": null,
-              "avg": 106.4,
+              "avg": 105.52,
               "status": "Pulih"
             },
             "SOSIAL": {
               "t_min_1": 100.0,
-              "t_0": 101.76,
-              "t_plus_1": 104.63,
-              "t_plus_2": 105.24,
+              "t_0": 101.26,
+              "t_plus_1": 103.31,
+              "t_plus_2": 103.74,
               "t_plus_3": 106.09,
               "t_plus_4": null,
-              "avg": 103.54,
+              "avg": 102.88,
               "status": "Pulih"
             },
             "EKONOMI": {
@@ -1614,20 +1497,20 @@
             },
             "LINTAS SEKTOR": {
               "t_min_1": 100.0,
-              "t_0": 104.46,
-              "t_plus_1": 107.33,
-              "t_plus_2": 107.31,
+              "t_0": 104.88,
+              "t_plus_1": 107.28,
+              "t_plus_2": 106.96,
               "t_plus_3": 113.81,
               "t_plus_4": null,
-              "avg": 106.58,
+              "avg": 106.59,
               "status": "Pulih"
             }
           },
           "overallSeries": {
             "t_min_1": 100.0,
-            "t_0": 97.99,
-            "t_plus_1": 103.73,
-            "t_plus_2": 105.42,
+            "t_0": 98.8,
+            "t_plus_1": 103.75,
+            "t_plus_2": 105.44,
             "t_plus_3": 112.75,
             "t_plus_4": null
           },
@@ -1801,76 +1684,7 @@
         "max": 595.8,
         "avg": 135.7
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 80.0,
-            "t_0": 69.18,
-            "t_plus_1": 85.09,
-            "t_plus_2": 97.23,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 82.88,
-            "status": "Belum Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 80.0,
-            "t_0": 80.42,
-            "t_plus_1": 82.23,
-            "t_plus_2": 83.26,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 81.48,
-            "status": "Belum Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 80.0,
-            "t_0": 80.24,
-            "t_plus_1": 81.24,
-            "t_plus_2": 80.66,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 80.53,
-            "status": "Belum Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 80.0,
-            "t_0": 80.27,
-            "t_plus_1": 81.07,
-            "t_plus_2": 84.4,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 81.43,
-            "status": "Belum Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 80.0,
-            "t_0": 81.66,
-            "t_plus_1": 84.39,
-            "t_plus_2": 84.76,
-            "t_plus_3": null,
-            "t_plus_4": null,
-            "avg": 82.7,
-            "status": "Belum Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 80.0,
-          "t_0": 78.35,
-          "t_plus_1": 82.8,
-          "t_plus_2": 86.06,
-          "t_plus_3": null,
-          "t_plus_4": null
-        },
-        "statusSeries": {
-          "t_min_1": "Belum Pulih",
-          "t_0": "Belum Pulih",
-          "t_plus_1": "Belum Pulih",
-          "t_plus_2": "Belum Pulih",
-          "t_plus_3": "#DIV/0!",
-          "t_plus_4": "#DIV/0!"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Banggai Kepulauan": {
           "sectors": {
@@ -2102,76 +1916,7 @@
         "max": 157.4,
         "avg": 40.5
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 98.15,
-            "t_plus_1": 101.02,
-            "t_plus_2": 101.59,
-            "t_plus_3": 102.81,
-            "t_plus_4": 103.26,
-            "avg": 101.14,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 99.86,
-            "t_plus_1": 100.34,
-            "t_plus_2": 102.51,
-            "t_plus_3": 103.61,
-            "t_plus_4": 103.49,
-            "avg": 101.64,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 100.14,
-            "t_plus_1": 100.39,
-            "t_plus_2": 101.0,
-            "t_plus_3": 101.1,
-            "t_plus_4": 101.08,
-            "avg": 100.62,
-            "status": "Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 101.04,
-            "t_plus_1": 102.59,
-            "t_plus_2": 103.76,
-            "t_plus_3": 107.57,
-            "t_plus_4": 108.73,
-            "avg": 103.95,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 99.85,
-            "t_plus_1": 100.74,
-            "t_plus_2": 101.8,
-            "t_plus_3": 102.42,
-            "t_plus_4": 103.13,
-            "avg": 101.32,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 99.81,
-          "t_plus_1": 101.02,
-          "t_plus_2": 102.13,
-          "t_plus_3": 103.5,
-          "t_plus_4": 103.94
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Belum Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Nias Utara": {
           "sectors": {
@@ -2386,6 +2131,167 @@
       }
     },
     {
+      "provinsi": "Maluku",
+      "totalSurveyPoints": 45,
+      "kabupatenList": [
+        "Maluku Barat Daya",
+        "Seram Bagian Timur"
+      ],
+      "disasterBreakdown": {
+        "Gempa Bumi": 24,
+        "Lainnya": 13,
+        "Banjir": 8
+      },
+      "altitudeStats": {
+        "min": -35.6,
+        "max": 332.9,
+        "avg": 36.8
+      },
+      "rekap": null,
+      "kabupatenRekap": {
+        "Maluku Barat Daya": {
+          "sectors": {
+            "PEMUKIMAN": {
+              "t_min_1": 100.0,
+              "t_0": 98.31,
+              "t_plus_1": 103.26,
+              "t_plus_2": 105.97,
+              "t_plus_3": 105.97,
+              "t_plus_4": null,
+              "avg": 102.7,
+              "status": "Pulih"
+            },
+            "INFRASTRUKTUR": {
+              "t_min_1": 100.0,
+              "t_0": 100.01,
+              "t_plus_1": 100.13,
+              "t_plus_2": 100.28,
+              "t_plus_3": 100.55,
+              "t_plus_4": null,
+              "avg": 100.19,
+              "status": "Pulih"
+            },
+            "SOSIAL": {
+              "t_min_1": 100.0,
+              "t_0": 99.93,
+              "t_plus_1": 98.54,
+              "t_plus_2": 98.42,
+              "t_plus_3": 98.21,
+              "t_plus_4": null,
+              "avg": 99.02,
+              "status": "Belum Pulih"
+            },
+            "EKONOMI": {
+              "t_min_1": 100.0,
+              "t_0": 100.0,
+              "t_plus_1": 100.0,
+              "t_plus_2": 100.0,
+              "t_plus_3": 100.0,
+              "t_plus_4": null,
+              "avg": 100.0,
+              "status": "Pulih"
+            },
+            "LINTAS SEKTOR": {
+              "t_min_1": 100.0,
+              "t_0": 99.49,
+              "t_plus_1": 103.26,
+              "t_plus_2": 103.24,
+              "t_plus_3": 103.17,
+              "t_plus_4": null,
+              "avg": 101.83,
+              "status": "Pulih"
+            }
+          },
+          "overallSeries": {
+            "t_min_1": 100.0,
+            "t_0": 99.55,
+            "t_plus_1": 101.04,
+            "t_plus_2": 101.58,
+            "t_plus_3": 101.58,
+            "t_plus_4": null
+          },
+          "statusSeries": {
+            "t_min_1": "Pulih",
+            "t_0": "Belum Pulih",
+            "t_plus_1": "Pulih",
+            "t_plus_2": "Pulih",
+            "t_plus_3": "Pulih",
+            "t_plus_4": null
+          }
+        },
+        "Seram Bagian Timur": {
+          "sectors": {
+            "PEMUKIMAN": {
+              "t_min_1": 100.0,
+              "t_0": 100.6,
+              "t_plus_1": 100.41,
+              "t_plus_2": 100.34,
+              "t_plus_3": 103.21,
+              "t_plus_4": 106.39,
+              "avg": 101.83,
+              "status": "Pulih"
+            },
+            "INFRASTRUKTUR": {
+              "t_min_1": 100.0,
+              "t_0": 100.28,
+              "t_plus_1": 100.51,
+              "t_plus_2": 101.29,
+              "t_plus_3": 103.73,
+              "t_plus_4": 105.37,
+              "avg": 101.86,
+              "status": "Pulih"
+            },
+            "SOSIAL": {
+              "t_min_1": 100.0,
+              "t_0": 100.0,
+              "t_plus_1": 100.3,
+              "t_plus_2": 100.12,
+              "t_plus_3": 100.22,
+              "t_plus_4": 100.12,
+              "avg": 100.13,
+              "status": "Pulih"
+            },
+            "EKONOMI": {
+              "t_min_1": 100.0,
+              "t_0": 103.85,
+              "t_plus_1": 103.85,
+              "t_plus_2": 103.85,
+              "t_plus_3": 103.85,
+              "t_plus_4": 103.85,
+              "avg": 103.21,
+              "status": "Pulih"
+            },
+            "LINTAS SEKTOR": {
+              "t_min_1": 100.0,
+              "t_0": 100.05,
+              "t_plus_1": 100.1,
+              "t_plus_2": 99.82,
+              "t_plus_3": 99.82,
+              "t_plus_4": 99.82,
+              "avg": 99.93,
+              "status": "Belum Pulih"
+            }
+          },
+          "overallSeries": {
+            "t_min_1": 100.0,
+            "t_0": 100.96,
+            "t_plus_1": 101.03,
+            "t_plus_2": 101.08,
+            "t_plus_3": 102.16,
+            "t_plus_4": 103.11
+          },
+          "statusSeries": {
+            "t_min_1": "Pulih",
+            "t_0": "Pulih",
+            "t_plus_1": "Pulih",
+            "t_plus_2": "Pulih",
+            "t_plus_3": "Pulih",
+            "t_plus_4": "Pulih"
+          }
+        }
+      }
+    },
+    {
       "provinsi": "Aceh",
       "totalSurveyPoints": 44,
       "kabupatenList": [
@@ -2397,148 +2303,79 @@
       },
       "altitudeStats": {
         "min": -205.7,
-        "max": 46.8,
-        "avg": 5.5
+        "max": 30.7,
+        "avg": -13.8
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 100.94,
-            "t_plus_1": 115.18,
-            "t_plus_2": 116.57,
-            "t_plus_3": 118.86,
-            "t_plus_4": 129.61,
-            "avg": 113.52,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 99.92,
-            "t_plus_1": 106.83,
-            "t_plus_2": 109.51,
-            "t_plus_3": 111.05,
-            "t_plus_4": 114.05,
-            "avg": 106.89,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 100.12,
-            "t_plus_1": 102.92,
-            "t_plus_2": 103.84,
-            "t_plus_3": 104.01,
-            "t_plus_4": 104.88,
-            "avg": 102.63,
-            "status": "Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 101.14,
-            "t_plus_1": 102.81,
-            "t_plus_2": 104.87,
-            "t_plus_3": 106.85,
-            "t_plus_4": 102.35,
-            "avg": 103.0,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 99.69,
-            "t_plus_1": 101.16,
-            "t_plus_2": 102.45,
-            "t_plus_3": 103.35,
-            "t_plus_4": 100.37,
-            "avg": 101.17,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 100.36,
-          "t_plus_1": 105.78,
-          "t_plus_2": 107.45,
-          "t_plus_3": 108.82,
-          "t_plus_4": 110.25
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Aceh Barat": {
           "sectors": {
             "PEMUKIMAN": {
               "t_min_1": 100.0,
-              "t_0": 100.45,
-              "t_plus_1": 103.62,
-              "t_plus_2": 104.89,
-              "t_plus_3": 108.43,
-              "t_plus_4": null,
-              "avg": 103.48,
+              "t_0": 99.03,
+              "t_plus_1": 103.65,
+              "t_plus_2": 105.97,
+              "t_plus_3": 110.06,
+              "t_plus_4": 110.66,
+              "avg": 104.89,
               "status": "Pulih"
             },
             "INFRASTRUKTUR": {
               "t_min_1": 100.0,
-              "t_0": 100.14,
-              "t_plus_1": 101.73,
-              "t_plus_2": 105.23,
-              "t_plus_3": 107.86,
-              "t_plus_4": null,
-              "avg": 102.99,
+              "t_0": 99.84,
+              "t_plus_1": 101.08,
+              "t_plus_2": 101.41,
+              "t_plus_3": 102.46,
+              "t_plus_4": 102.73,
+              "avg": 101.25,
               "status": "Pulih"
             },
             "SOSIAL": {
               "t_min_1": 100.0,
-              "t_0": 100.14,
-              "t_plus_1": 101.23,
-              "t_plus_2": 102.88,
-              "t_plus_3": 103.19,
-              "t_plus_4": null,
-              "avg": 101.49,
+              "t_0": 100.42,
+              "t_plus_1": 100.83,
+              "t_plus_2": 101.29,
+              "t_plus_3": 101.92,
+              "t_plus_4": 102.2,
+              "avg": 101.11,
               "status": "Pulih"
             },
             "EKONOMI": {
               "t_min_1": 100.0,
-              "t_0": 102.28,
-              "t_plus_1": 104.51,
-              "t_plus_2": 107.39,
-              "t_plus_3": 110.43,
-              "t_plus_4": null,
-              "avg": 104.92,
+              "t_0": 98.25,
+              "t_plus_1": 112.53,
+              "t_plus_2": 113.06,
+              "t_plus_3": 116.72,
+              "t_plus_4": 116.45,
+              "avg": 109.5,
               "status": "Pulih"
             },
             "LINTAS SEKTOR": {
               "t_min_1": 100.0,
-              "t_0": 99.55,
-              "t_plus_1": 101.77,
-              "t_plus_2": 104.53,
-              "t_plus_3": 106.33,
-              "t_plus_4": null,
-              "avg": 102.44,
+              "t_0": 100.0,
+              "t_plus_1": 100.98,
+              "t_plus_2": 101.45,
+              "t_plus_3": 101.94,
+              "t_plus_4": 101.82,
+              "avg": 101.03,
               "status": "Pulih"
             }
           },
           "overallSeries": {
             "t_min_1": 100.0,
-            "t_0": 100.51,
-            "t_plus_1": 102.57,
-            "t_plus_2": 104.98,
-            "t_plus_3": 107.25,
-            "t_plus_4": null
+            "t_0": 99.51,
+            "t_plus_1": 103.81,
+            "t_plus_2": 104.64,
+            "t_plus_3": 106.62,
+            "t_plus_4": 106.77
           },
           "statusSeries": {
             "t_min_1": "Pulih",
-            "t_0": "Pulih",
+            "t_0": "Belum Pulih",
             "t_plus_1": "Pulih",
             "t_plus_2": "Pulih",
             "t_plus_3": "Pulih",
-            "t_plus_4": null
+            "t_plus_4": "Pulih"
           }
         },
         "Aceh Jaya": {
@@ -2776,167 +2613,6 @@
       }
     },
     {
-      "provinsi": "Maluku",
-      "totalSurveyPoints": 30,
-      "kabupatenList": [
-        "Maluku Barat Daya",
-        "Seram Bagian Timur"
-      ],
-      "disasterBreakdown": {
-        "Lainnya": 12,
-        "Gempa Bumi": 10,
-        "Banjir": 8
-      },
-      "altitudeStats": {
-        "min": -15.9,
-        "max": 332.9,
-        "avg": 52.8
-      },
-      "rekap": null,
-      "kabupatenRekap": {
-        "Maluku Barat Daya": {
-          "sectors": {
-            "PEMUKIMAN": {
-              "t_min_1": 100.0,
-              "t_0": 95.78,
-              "t_plus_1": 96.02,
-              "t_plus_2": 100.57,
-              "t_plus_3": 100.57,
-              "t_plus_4": null,
-              "avg": 98.59,
-              "status": "Pulih"
-            },
-            "INFRASTRUKTUR": {
-              "t_min_1": 100.0,
-              "t_0": 100.0,
-              "t_plus_1": 99.57,
-              "t_plus_2": 99.96,
-              "t_plus_3": 100.26,
-              "t_plus_4": null,
-              "avg": 99.96,
-              "status": "Pulih"
-            },
-            "SOSIAL": {
-              "t_min_1": 100.0,
-              "t_0": 99.99,
-              "t_plus_1": 100.1,
-              "t_plus_2": 99.98,
-              "t_plus_3": 99.62,
-              "t_plus_4": null,
-              "avg": 99.94,
-              "status": "Belum Pulih"
-            },
-            "EKONOMI": {
-              "t_min_1": 100.0,
-              "t_0": 100.0,
-              "t_plus_1": 100.0,
-              "t_plus_2": 100.0,
-              "t_plus_3": 100.0,
-              "t_plus_4": null,
-              "avg": 100.0,
-              "status": "Pulih"
-            },
-            "LINTAS SEKTOR": {
-              "t_min_1": 100.0,
-              "t_0": 101.73,
-              "t_plus_1": 102.55,
-              "t_plus_2": 103.05,
-              "t_plus_3": 102.38,
-              "t_plus_4": null,
-              "avg": 101.94,
-              "status": "Pulih"
-            }
-          },
-          "overallSeries": {
-            "t_min_1": 100.0,
-            "t_0": 99.5,
-            "t_plus_1": 99.65,
-            "t_plus_2": 100.71,
-            "t_plus_3": 100.57,
-            "t_plus_4": null
-          },
-          "statusSeries": {
-            "t_min_1": "Pulih",
-            "t_0": "Belum Pulih",
-            "t_plus_1": "Belum Pulih",
-            "t_plus_2": "Pulih",
-            "t_plus_3": "Pulih",
-            "t_plus_4": null
-          }
-        },
-        "Seram Bagian Timur": {
-          "sectors": {
-            "PEMUKIMAN": {
-              "t_min_1": 100.0,
-              "t_0": 100.6,
-              "t_plus_1": 100.41,
-              "t_plus_2": 100.34,
-              "t_plus_3": 103.21,
-              "t_plus_4": 106.39,
-              "avg": 101.83,
-              "status": "Pulih"
-            },
-            "INFRASTRUKTUR": {
-              "t_min_1": 100.0,
-              "t_0": 100.28,
-              "t_plus_1": 100.51,
-              "t_plus_2": 101.29,
-              "t_plus_3": 103.73,
-              "t_plus_4": 105.37,
-              "avg": 101.86,
-              "status": "Pulih"
-            },
-            "SOSIAL": {
-              "t_min_1": 100.0,
-              "t_0": 100.0,
-              "t_plus_1": 100.3,
-              "t_plus_2": 100.12,
-              "t_plus_3": 100.22,
-              "t_plus_4": 100.12,
-              "avg": 100.13,
-              "status": "Pulih"
-            },
-            "EKONOMI": {
-              "t_min_1": 100.0,
-              "t_0": 103.85,
-              "t_plus_1": 103.85,
-              "t_plus_2": 103.85,
-              "t_plus_3": 103.85,
-              "t_plus_4": 103.85,
-              "avg": 103.21,
-              "status": "Pulih"
-            },
-            "LINTAS SEKTOR": {
-              "t_min_1": 100.0,
-              "t_0": 100.05,
-              "t_plus_1": 100.1,
-              "t_plus_2": 99.82,
-              "t_plus_3": 99.82,
-              "t_plus_4": 99.82,
-              "avg": 99.93,
-              "status": "Belum Pulih"
-            }
-          },
-          "overallSeries": {
-            "t_min_1": 100.0,
-            "t_0": 100.96,
-            "t_plus_1": 101.03,
-            "t_plus_2": 101.08,
-            "t_plus_3": 102.16,
-            "t_plus_4": 103.11
-          },
-          "statusSeries": {
-            "t_min_1": "Pulih",
-            "t_0": "Pulih",
-            "t_plus_1": "Pulih",
-            "t_plus_2": "Pulih",
-            "t_plus_3": "Pulih",
-            "t_plus_4": "Pulih"
-          }
-        }
-      }
-    },
-    {
       "provinsi": "Nusa Tenggara Barat",
       "totalSurveyPoints": 24,
       "kabupatenList": [
@@ -2952,76 +2628,7 @@
         "max": 75.8,
         "avg": 64.0
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 96.92,
-            "t_plus_1": 100.29,
-            "t_plus_2": 103.42,
-            "t_plus_3": 103.86,
-            "t_plus_4": 104.63,
-            "avg": 101.52,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 98.78,
-            "t_plus_1": 101.01,
-            "t_plus_2": 101.42,
-            "t_plus_3": 101.67,
-            "t_plus_4": 101.82,
-            "avg": 100.79,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 99.89,
-            "t_plus_1": 100.09,
-            "t_plus_2": 99.82,
-            "t_plus_3": 99.89,
-            "t_plus_4": 100.03,
-            "avg": 99.95,
-            "status": "Belum Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 96.67,
-            "t_plus_1": 100.0,
-            "t_plus_2": 100.0,
-            "t_plus_3": 100.0,
-            "t_plus_4": 100.0,
-            "avg": 99.44,
-            "status": "Belum Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 97.52,
-            "t_plus_1": 101.76,
-            "t_plus_2": 101.21,
-            "t_plus_3": 101.03,
-            "t_plus_4": 101.79,
-            "avg": 100.55,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 97.96,
-          "t_plus_1": 100.63,
-          "t_plus_2": 101.17,
-          "t_plus_3": 101.29,
-          "t_plus_4": 101.65
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Belum Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Bima": {
           "sectors": {
@@ -3256,6 +2863,97 @@
       }
     },
     {
+      "provinsi": "Kalimantan Selatan",
+      "totalSurveyPoints": 20,
+      "kabupatenList": [
+        "Hulu Sungai Selatan"
+      ],
+      "disasterBreakdown": {
+        "Banjir": 15,
+        "Kekeringan": 2,
+        "Banjir Kekeringan": 2,
+        "Kekeringan Banjir": 1
+      },
+      "altitudeStats": {
+        "min": 51.6,
+        "max": 70.0,
+        "avg": 61.0
+      },
+      "rekap": null,
+      "kabupatenRekap": {
+        "Hulu Sungai Selatan": {
+          "sectors": {
+            "PEMUKIMAN": {
+              "t_min_1": 100.0,
+              "t_0": 99.05,
+              "t_plus_1": 101.43,
+              "t_plus_2": 104.32,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 101.2,
+              "status": "Pulih"
+            },
+            "INFRASTRUKTUR": {
+              "t_min_1": 100.0,
+              "t_0": 99.89,
+              "t_plus_1": 99.76,
+              "t_plus_2": 99.08,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 99.68,
+              "status": "Belum Pulih"
+            },
+            "SOSIAL": {
+              "t_min_1": 100.0,
+              "t_0": 100.04,
+              "t_plus_1": 100.99,
+              "t_plus_2": 102.58,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 100.9,
+              "status": "Pulih"
+            },
+            "EKONOMI": {
+              "t_min_1": 100.0,
+              "t_0": 100.18,
+              "t_plus_1": 99.26,
+              "t_plus_2": 98.33,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 99.44,
+              "status": "Belum Pulih"
+            },
+            "LINTAS SEKTOR": {
+              "t_min_1": 100.0,
+              "t_0": 100.63,
+              "t_plus_1": 101.23,
+              "t_plus_2": 101.94,
+              "t_plus_3": null,
+              "t_plus_4": null,
+              "avg": 100.95,
+              "status": "Pulih"
+            }
+          },
+          "overallSeries": {
+            "t_min_1": 100.0,
+            "t_0": 99.96,
+            "t_plus_1": 100.54,
+            "t_plus_2": 101.25,
+            "t_plus_3": null,
+            "t_plus_4": null
+          },
+          "statusSeries": {
+            "t_min_1": "Pulih",
+            "t_0": "Belum Pulih",
+            "t_plus_1": "Pulih",
+            "t_plus_2": "Pulih",
+            "t_plus_3": null,
+            "t_plus_4": null
+          }
+        }
+      }
+    },
+    {
       "provinsi": "Bengkulu",
       "totalSurveyPoints": 20,
       "kabupatenList": [
@@ -3270,76 +2968,7 @@
         "max": 597.5,
         "avg": 530.7
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 100.22,
-            "t_plus_1": 100.6,
-            "t_plus_2": 102.27,
-            "t_plus_3": 108.81,
-            "t_plus_4": 129.36,
-            "avg": 106.88,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 100.7,
-            "t_plus_2": 102.25,
-            "t_plus_3": 104.46,
-            "t_plus_4": 113.27,
-            "avg": 103.45,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 100.11,
-            "t_plus_1": 100.32,
-            "t_plus_2": 100.69,
-            "t_plus_3": 101.98,
-            "t_plus_4": 104.75,
-            "avg": 101.31,
-            "status": "Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 100.0,
-            "t_plus_2": 100.0,
-            "t_plus_3": 100.0,
-            "t_plus_4": 100.0,
-            "avg": 100.0,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 100.22,
-            "t_plus_1": 100.22,
-            "t_plus_2": 100.65,
-            "t_plus_3": 101.76,
-            "t_plus_4": 105.58,
-            "avg": 101.41,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 100.11,
-          "t_plus_1": 100.37,
-          "t_plus_2": 101.17,
-          "t_plus_3": 103.4,
-          "t_plus_4": 110.59
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Kepahiang": {
           "sectors": {
@@ -3515,76 +3144,7 @@
         "max": 48.9,
         "avg": 34.0
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 100.25,
-            "t_plus_1": 101.22,
-            "t_plus_2": 101.37,
-            "t_plus_3": 101.51,
-            "t_plus_4": 101.51,
-            "avg": 100.97,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 100.57,
-            "t_plus_1": 101.26,
-            "t_plus_2": 100.98,
-            "t_plus_3": 101.4,
-            "t_plus_4": 101.41,
-            "avg": 100.94,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 100.35,
-            "t_plus_1": 99.92,
-            "t_plus_2": 99.79,
-            "t_plus_3": 99.62,
-            "t_plus_4": 99.63,
-            "avg": 99.89,
-            "status": "Belum Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 99.07,
-            "t_plus_1": 102.33,
-            "t_plus_2": 103.29,
-            "t_plus_3": 106.04,
-            "t_plus_4": 106.04,
-            "avg": 102.8,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 102.02,
-            "t_plus_1": 105.7,
-            "t_plus_2": 106.93,
-            "t_plus_3": 107.62,
-            "t_plus_4": 107.5,
-            "avg": 104.96,
-            "status": "Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 100.45,
-          "t_plus_1": 102.09,
-          "t_plus_2": 102.47,
-          "t_plus_3": 103.24,
-          "t_plus_4": 103.22
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Kebumen": {
           "sectors": {
@@ -3747,95 +3307,21 @@
       }
     },
     {
-      "provinsi": "Kalimantan Selatan",
-      "totalSurveyPoints": 19,
+      "provinsi": "Kalimantan Barat",
+      "totalSurveyPoints": 20,
       "kabupatenList": [
-        "Hulu Sungai Selatan"
+        "Sekadau"
       ],
       "disasterBreakdown": {
-        "Banjir": 14,
-        "Kekeringan": 2,
-        "Banjir Kekeringan": 2,
-        "Kekeringan Banjir": 1
+        "Banjir": 20
       },
       "altitudeStats": {
-        "min": 51.6,
-        "max": 70.0,
-        "avg": 61.4
+        "min": 36.8,
+        "max": 108.7,
+        "avg": 68.3
       },
       "rekap": null,
-      "kabupatenRekap": {
-        "Hulu Sungai Selatan": {
-          "sectors": {
-            "PEMUKIMAN": {
-              "t_min_1": 100.0,
-              "t_0": 99.05,
-              "t_plus_1": 101.43,
-              "t_plus_2": 104.32,
-              "t_plus_3": null,
-              "t_plus_4": null,
-              "avg": 101.2,
-              "status": "Pulih"
-            },
-            "INFRASTRUKTUR": {
-              "t_min_1": 100.0,
-              "t_0": 99.89,
-              "t_plus_1": 99.76,
-              "t_plus_2": 99.08,
-              "t_plus_3": null,
-              "t_plus_4": null,
-              "avg": 99.68,
-              "status": "Belum Pulih"
-            },
-            "SOSIAL": {
-              "t_min_1": 100.0,
-              "t_0": 100.04,
-              "t_plus_1": 100.99,
-              "t_plus_2": 102.58,
-              "t_plus_3": null,
-              "t_plus_4": null,
-              "avg": 100.9,
-              "status": "Pulih"
-            },
-            "EKONOMI": {
-              "t_min_1": 100.0,
-              "t_0": 100.18,
-              "t_plus_1": 99.26,
-              "t_plus_2": 98.33,
-              "t_plus_3": null,
-              "t_plus_4": null,
-              "avg": 99.44,
-              "status": "Belum Pulih"
-            },
-            "LINTAS SEKTOR": {
-              "t_min_1": 100.0,
-              "t_0": 100.63,
-              "t_plus_1": 101.23,
-              "t_plus_2": 101.94,
-              "t_plus_3": null,
-              "t_plus_4": null,
-              "avg": 100.95,
-              "status": "Pulih"
-            }
-          },
-          "overallSeries": {
-            "t_min_1": 100.0,
-            "t_0": 99.96,
-            "t_plus_1": 100.54,
-            "t_plus_2": 101.25,
-            "t_plus_3": null,
-            "t_plus_4": null
-          },
-          "statusSeries": {
-            "t_min_1": "Pulih",
-            "t_0": "Belum Pulih",
-            "t_plus_1": "Pulih",
-            "t_plus_2": "Pulih",
-            "t_plus_3": null,
-            "t_plus_4": null
-          }
-        }
-      }
+      "kabupatenRekap": {}
     },
     {
       "provinsi": "Jambi",
@@ -3853,137 +3339,68 @@
         "max": 195.0,
         "avg": 98.4
       },
-      "rekap": {
-        "sectors": {
-          "PEMUKIMAN": {
-            "t_min_1": 100.0,
-            "t_0": 100.91,
-            "t_plus_1": 103.73,
-            "t_plus_2": 106.73,
-            "t_plus_3": 107.73,
-            "t_plus_4": 112.85,
-            "avg": 105.32,
-            "status": "Pulih"
-          },
-          "INFRASTRUKTUR": {
-            "t_min_1": 100.0,
-            "t_0": 100.33,
-            "t_plus_1": 104.76,
-            "t_plus_2": 109.93,
-            "t_plus_3": 116.27,
-            "t_plus_4": 121.98,
-            "avg": 108.88,
-            "status": "Pulih"
-          },
-          "SOSIAL": {
-            "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 101.13,
-            "t_plus_2": 101.13,
-            "t_plus_3": 101.83,
-            "t_plus_4": 102.23,
-            "avg": 101.06,
-            "status": "Pulih"
-          },
-          "EKONOMI": {
-            "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 103.67,
-            "t_plus_2": 109.67,
-            "t_plus_3": 109.67,
-            "t_plus_4": 113.67,
-            "avg": 106.11,
-            "status": "Pulih"
-          },
-          "LINTAS SEKTOR": {
-            "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 101.09,
-            "t_plus_2": 97.45,
-            "t_plus_3": 98.45,
-            "t_plus_4": 98.45,
-            "avg": 99.24,
-            "status": "Belum Pulih"
-          }
-        },
-        "overallSeries": {
-          "t_min_1": 100.0,
-          "t_0": 100.25,
-          "t_plus_1": 102.88,
-          "t_plus_2": 104.98,
-          "t_plus_3": 106.79,
-          "t_plus_4": 109.84
-        },
-        "statusSeries": {
-          "t_min_1": "Pulih",
-          "t_0": "Pulih",
-          "t_plus_1": "Pulih",
-          "t_plus_2": "Pulih",
-          "t_plus_3": "Pulih",
-          "t_plus_4": "Pulih"
-        }
-      },
+      "rekap": null,
       "kabupatenRekap": {
         "Bungo": {
           "sectors": {
             "PEMUKIMAN": {
               "t_min_1": 100.0,
-              "t_0": 100.91,
-              "t_plus_1": 103.73,
-              "t_plus_2": 106.73,
-              "t_plus_3": 107.73,
-              "t_plus_4": 112.85,
-              "avg": 105.33,
+              "t_0": 100.45,
+              "t_plus_1": 103.02,
+              "t_plus_2": 104.52,
+              "t_plus_3": 105.02,
+              "t_plus_4": null,
+              "avg": 102.6,
               "status": "Pulih"
             },
             "INFRASTRUKTUR": {
               "t_min_1": 100.0,
-              "t_0": 100.33,
-              "t_plus_1": 104.76,
-              "t_plus_2": 109.93,
-              "t_plus_3": 116.27,
-              "t_plus_4": 121.98,
-              "avg": 108.88,
+              "t_0": 100.16,
+              "t_plus_1": 102.66,
+              "t_plus_2": 104.62,
+              "t_plus_3": 108.1,
+              "t_plus_4": null,
+              "avg": 103.11,
               "status": "Pulih"
             },
             "SOSIAL": {
               "t_min_1": 100.0,
               "t_0": 100.0,
-              "t_plus_1": 101.13,
-              "t_plus_2": 101.13,
-              "t_plus_3": 101.83,
-              "t_plus_4": 102.23,
-              "avg": 101.05,
+              "t_plus_1": 100.46,
+              "t_plus_2": 100.57,
+              "t_plus_3": 100.92,
+              "t_plus_4": null,
+              "avg": 100.39,
               "status": "Pulih"
             },
             "EKONOMI": {
               "t_min_1": 100.0,
               "t_0": 100.0,
-              "t_plus_1": 103.67,
-              "t_plus_2": 109.67,
-              "t_plus_3": 109.67,
+              "t_plus_1": 102.04,
+              "t_plus_2": 105.37,
+              "t_plus_3": 106.6,
               "t_plus_4": 113.67,
-              "avg": 106.11,
+              "avg": 104.61,
               "status": "Pulih"
             },
             "LINTAS SEKTOR": {
               "t_min_1": 100.0,
-              "t_0": 100.0,
-              "t_plus_1": 101.09,
-              "t_plus_2": 97.45,
-              "t_plus_3": 98.45,
-              "t_plus_4": 98.45,
-              "avg": 99.24,
+              "t_0": 100.05,
+              "t_plus_1": 94.21,
+              "t_plus_2": 92.39,
+              "t_plus_3": 92.84,
+              "t_plus_4": null,
+              "avg": 95.9,
               "status": "Belum Pulih"
             }
           },
           "overallSeries": {
             "t_min_1": 100.0,
-            "t_0": 100.25,
-            "t_plus_1": 102.88,
-            "t_plus_2": 104.98,
-            "t_plus_3": 106.79,
-            "t_plus_4": 109.84
+            "t_0": 100.13,
+            "t_plus_1": 100.48,
+            "t_plus_2": 101.49,
+            "t_plus_3": 102.7,
+            "t_plus_4": null
           },
           "statusSeries": {
             "t_min_1": "Pulih",
@@ -3991,7 +3408,7 @@
             "t_plus_1": "Pulih",
             "t_plus_2": "Pulih",
             "t_plus_3": "Pulih",
-            "t_plus_4": "Pulih"
+            "t_plus_4": null
           }
         }
       }
@@ -3999,10 +3416,10 @@
   ],
   "rekapKenaikan": {
     "nationalSummary": {
-      "rataRataPerSektorTAkhir": 105.16,
-      "rataRataKenaikan": 5.79,
-      "totalWilayah": 42,
-      "totalPulih": 37,
+      "rataRataPerSektorTAkhir": 104.91,
+      "rataRataKenaikan": 5.6,
+      "totalWilayah": 43,
+      "totalPulih": 38,
       "totalBelumPulih": 5
     },
     "data": [
@@ -4013,61 +3430,61 @@
         "series": {
           "permukiman": {
             "t_min_1": 100.0,
-            "t_0": 100.45,
-            "t_plus_1": 103.62,
-            "t_plus_2": 104.89,
-            "t_plus_3": 108.43,
-            "t_plus_4": null
+            "t_0": 99.03,
+            "t_plus_1": 103.65,
+            "t_plus_2": 105.97,
+            "t_plus_3": 110.06,
+            "t_plus_4": 110.66
           },
           "infrastruktur": {
             "t_min_1": 100.0,
-            "t_0": 100.14,
-            "t_plus_1": 101.73,
-            "t_plus_2": 105.23,
-            "t_plus_3": 107.86,
-            "t_plus_4": null
+            "t_0": 99.84,
+            "t_plus_1": 101.08,
+            "t_plus_2": 101.41,
+            "t_plus_3": 102.46,
+            "t_plus_4": 102.73
           },
           "sosial": {
             "t_min_1": 100.0,
-            "t_0": 100.14,
-            "t_plus_1": 101.23,
-            "t_plus_2": 102.88,
-            "t_plus_3": 103.19,
-            "t_plus_4": null
+            "t_0": 100.42,
+            "t_plus_1": 100.83,
+            "t_plus_2": 101.29,
+            "t_plus_3": 101.92,
+            "t_plus_4": 102.2
           },
           "ekonomi": {
             "t_min_1": 100.0,
-            "t_0": 102.28,
-            "t_plus_1": 104.51,
-            "t_plus_2": 107.39,
-            "t_plus_3": 110.43,
-            "t_plus_4": null
+            "t_0": 98.25,
+            "t_plus_1": 112.53,
+            "t_plus_2": 113.06,
+            "t_plus_3": 116.72,
+            "t_plus_4": 116.45
           },
           "multisektor": {
             "t_min_1": 100.0,
-            "t_0": 99.55,
-            "t_plus_1": 101.77,
-            "t_plus_2": 104.53,
-            "t_plus_3": 106.33,
-            "t_plus_4": null
+            "t_0": 100.0,
+            "t_plus_1": 100.98,
+            "t_plus_2": 101.45,
+            "t_plus_3": 101.94,
+            "t_plus_4": 101.82
           }
         },
         "nilaiTAkhir": {
-          "permukiman": 108.43,
-          "infrastruktur": 107.86,
-          "sosial": 103.19,
-          "ekonomi": 110.43,
-          "multisektor": 106.33,
-          "rataRata": 107.25
+          "permukiman": 110.06,
+          "infrastruktur": 102.46,
+          "sosial": 101.92,
+          "ekonomi": 116.72,
+          "multisektor": 101.94,
+          "rataRata": 106.62
         },
         "kesimpulan": "Pulih",
         "kenaikan": {
-          "permukiman": 7.98,
-          "infrastruktur": 7.72,
-          "sosial": 3.05,
-          "ekonomi": 8.15,
-          "multisektor": 6.78,
-          "rataRata": 6.74
+          "permukiman": 11.03,
+          "infrastruktur": 2.62,
+          "sosial": 1.5,
+          "ekonomi": 18.47,
+          "multisektor": 1.94,
+          "rataRata": 7.11
         }
       },
       {
@@ -4333,65 +3750,129 @@
         "series": {
           "permukiman": {
             "t_min_1": 100.0,
-            "t_0": 100.91,
-            "t_plus_1": 103.73,
-            "t_plus_2": 106.73,
-            "t_plus_3": 107.73,
-            "t_plus_4": 112.85
+            "t_0": 100.45,
+            "t_plus_1": 103.02,
+            "t_plus_2": 104.52,
+            "t_plus_3": 105.02,
+            "t_plus_4": null
           },
           "infrastruktur": {
             "t_min_1": 100.0,
-            "t_0": 100.33,
-            "t_plus_1": 104.76,
-            "t_plus_2": 109.93,
-            "t_plus_3": 116.27,
-            "t_plus_4": 121.98
+            "t_0": 100.16,
+            "t_plus_1": 102.66,
+            "t_plus_2": 104.62,
+            "t_plus_3": 108.1,
+            "t_plus_4": null
           },
           "sosial": {
             "t_min_1": 100.0,
             "t_0": 100.0,
-            "t_plus_1": 101.13,
-            "t_plus_2": 101.13,
-            "t_plus_3": 101.83,
-            "t_plus_4": 102.23
+            "t_plus_1": 100.46,
+            "t_plus_2": 100.57,
+            "t_plus_3": 100.92,
+            "t_plus_4": null
           },
           "ekonomi": {
             "t_min_1": 100.0,
             "t_0": 100.0,
-            "t_plus_1": 103.67,
-            "t_plus_2": 109.67,
-            "t_plus_3": 109.67,
+            "t_plus_1": 102.04,
+            "t_plus_2": 105.37,
+            "t_plus_3": 106.6,
             "t_plus_4": 113.67
           },
           "multisektor": {
             "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 101.09,
-            "t_plus_2": 97.45,
-            "t_plus_3": 98.45,
-            "t_plus_4": 98.45
+            "t_0": 100.05,
+            "t_plus_1": 94.21,
+            "t_plus_2": 92.39,
+            "t_plus_3": 92.84,
+            "t_plus_4": null
           }
         },
         "nilaiTAkhir": {
-          "permukiman": 112.85,
-          "infrastruktur": 121.98,
-          "sosial": 102.23,
+          "permukiman": 105.02,
+          "infrastruktur": 108.1,
+          "sosial": 100.92,
           "ekonomi": 113.67,
-          "multisektor": 98.45,
-          "rataRata": 109.84
+          "multisektor": 92.84,
+          "rataRata": 104.11
         },
         "kesimpulan": "Pulih",
         "kenaikan": {
-          "permukiman": 11.94,
-          "infrastruktur": 21.65,
-          "sosial": 2.23,
+          "permukiman": 4.56,
+          "infrastruktur": 7.93,
+          "sosial": 0.92,
           "ekonomi": 13.67,
-          "multisektor": -1.55,
-          "rataRata": 9.59
+          "multisektor": -7.21,
+          "rataRata": 3.97
         }
       },
       {
         "id": 7,
+        "provinsi": "Sumatera Barat",
+        "kabupaten": "Pesisir Selatan",
+        "series": {
+          "permukiman": {
+            "t_min_1": 100.0,
+            "t_0": 89.21,
+            "t_plus_1": 106.25,
+            "t_plus_2": 106.55,
+            "t_plus_3": null,
+            "t_plus_4": null
+          },
+          "infrastruktur": {
+            "t_min_1": 100.0,
+            "t_0": 98.63,
+            "t_plus_1": 99.45,
+            "t_plus_2": 99.45,
+            "t_plus_3": null,
+            "t_plus_4": null
+          },
+          "sosial": {
+            "t_min_1": 100.0,
+            "t_0": 99.73,
+            "t_plus_1": 99.73,
+            "t_plus_2": 99.7,
+            "t_plus_3": null,
+            "t_plus_4": null
+          },
+          "ekonomi": {
+            "t_min_1": 100.0,
+            "t_0": 99.32,
+            "t_plus_1": 100.02,
+            "t_plus_2": 100.02,
+            "t_plus_3": null,
+            "t_plus_4": null
+          },
+          "multisektor": {
+            "t_min_1": 100.0,
+            "t_0": 96.96,
+            "t_plus_1": 100.28,
+            "t_plus_2": 100.28,
+            "t_plus_3": null,
+            "t_plus_4": null
+          }
+        },
+        "nilaiTAkhir": {
+          "permukiman": 106.55,
+          "infrastruktur": 99.45,
+          "sosial": 99.7,
+          "ekonomi": 100.02,
+          "multisektor": 100.28,
+          "rataRata": 101.2
+        },
+        "kesimpulan": "Pulih",
+        "kenaikan": {
+          "permukiman": 17.34,
+          "infrastruktur": 0.81,
+          "sosial": -0.02,
+          "ekonomi": 0.7,
+          "multisektor": 3.32,
+          "rataRata": 4.43
+        }
+      },
+      {
+        "id": 8,
         "provinsi": "Sumatera Selatan",
         "kabupaten": "Banyuasin",
         "series": {
@@ -4455,7 +3936,7 @@
         }
       },
       {
-        "id": 8,
+        "id": 9,
         "provinsi": "Sumatera Selatan",
         "kabupaten": "Empat Lawang",
         "series": {
@@ -4519,7 +4000,7 @@
         }
       },
       {
-        "id": 9,
+        "id": 10,
         "provinsi": "Sumatera Selatan",
         "kabupaten": "Musi Banyuasin",
         "series": {
@@ -4583,7 +4064,7 @@
         }
       },
       {
-        "id": 10,
+        "id": 11,
         "provinsi": "Sumatera Selatan",
         "kabupaten": "Musi Rawas",
         "series": {
@@ -4647,7 +4128,7 @@
         }
       },
       {
-        "id": 11,
+        "id": 12,
         "provinsi": "Sumatera Selatan",
         "kabupaten": "Musi Rawas Utara",
         "series": {
@@ -4711,7 +4192,7 @@
         }
       },
       {
-        "id": 12,
+        "id": 13,
         "provinsi": "Sumatera Selatan",
         "kabupaten": "Ogan Komering Ulu",
         "series": {
@@ -4775,7 +4256,7 @@
         }
       },
       {
-        "id": 13,
+        "id": 14,
         "provinsi": "Bengkulu",
         "kabupaten": "Kepahiang",
         "series": {
@@ -4839,31 +4320,31 @@
         }
       },
       {
-        "id": 14,
+        "id": 15,
         "provinsi": "Jawa Barat",
         "kabupaten": "Bandung Barat",
         "series": {
           "permukiman": {
             "t_min_1": 100.0,
-            "t_0": 82.27,
-            "t_plus_1": 100.2,
-            "t_plus_2": 106.94,
+            "t_0": 87.03,
+            "t_plus_1": 103.5,
+            "t_plus_2": 110.82,
             "t_plus_3": 114.69,
             "t_plus_4": null
           },
           "infrastruktur": {
             "t_min_1": 100.0,
-            "t_0": 101.46,
-            "t_plus_1": 106.5,
-            "t_plus_2": 107.63,
+            "t_0": 100.85,
+            "t_plus_1": 104.65,
+            "t_plus_2": 105.67,
             "t_plus_3": 116.41,
             "t_plus_4": null
           },
           "sosial": {
             "t_min_1": 100.0,
-            "t_0": 101.76,
-            "t_plus_1": 104.63,
-            "t_plus_2": 105.24,
+            "t_0": 101.26,
+            "t_plus_1": 103.31,
+            "t_plus_2": 103.74,
             "t_plus_3": 106.09,
             "t_plus_4": null
           },
@@ -4877,9 +4358,9 @@
           },
           "multisektor": {
             "t_min_1": 100.0,
-            "t_0": 104.46,
-            "t_plus_1": 107.33,
-            "t_plus_2": 107.31,
+            "t_0": 104.88,
+            "t_plus_1": 107.28,
+            "t_plus_2": 106.96,
             "t_plus_3": 113.81,
             "t_plus_4": null
           }
@@ -4894,16 +4375,16 @@
         },
         "kesimpulan": "Pulih",
         "kenaikan": {
-          "permukiman": 32.42,
-          "infrastruktur": 14.95,
-          "sosial": 4.32,
+          "permukiman": 27.66,
+          "infrastruktur": 15.56,
+          "sosial": 4.83,
           "ekonomi": 0.0,
-          "multisektor": 9.35,
-          "rataRata": 12.21
+          "multisektor": 8.93,
+          "rataRata": 11.4
         }
       },
       {
-        "id": 15,
+        "id": 16,
         "provinsi": "Jawa Barat",
         "kabupaten": "Kota Bogor",
         "series": {
@@ -4967,7 +4448,7 @@
         }
       },
       {
-        "id": 16,
+        "id": 17,
         "provinsi": "Jawa Barat",
         "kabupaten": "Garut",
         "series": {
@@ -5031,7 +4512,7 @@
         }
       },
       {
-        "id": 17,
+        "id": 18,
         "provinsi": "Jawa Barat",
         "kabupaten": "Bandung",
         "series": {
@@ -5095,7 +4576,7 @@
         }
       },
       {
-        "id": 18,
+        "id": 19,
         "provinsi": "Jawa Tengah",
         "kabupaten": "Kebumen",
         "series": {
@@ -5159,7 +4640,7 @@
         }
       },
       {
-        "id": 19,
+        "id": 20,
         "provinsi": "Jawa Timur",
         "kabupaten": "Prov. Jawa Timur",
         "series": {
@@ -5223,7 +4704,7 @@
         }
       },
       {
-        "id": 20,
+        "id": 21,
         "provinsi": "Jawa Timur",
         "kabupaten": "Mojokerto",
         "series": {
@@ -5287,7 +4768,7 @@
         }
       },
       {
-        "id": 21,
+        "id": 22,
         "provinsi": "Jawa Timur",
         "kabupaten": "Sampang",
         "series": {
@@ -5351,7 +4832,7 @@
         }
       },
       {
-        "id": 22,
+        "id": 23,
         "provinsi": "Jawa Timur",
         "kabupaten": "Gresik",
         "series": {
@@ -5415,7 +4896,7 @@
         }
       },
       {
-        "id": 23,
+        "id": 24,
         "provinsi": "Nusa Tenggara Barat",
         "kabupaten": "Bima",
         "series": {
@@ -5479,7 +4960,7 @@
         }
       },
       {
-        "id": 24,
+        "id": 25,
         "provinsi": "Nusa Tenggara Barat",
         "kabupaten": "Dompu",
         "series": {
@@ -5543,7 +5024,7 @@
         }
       },
       {
-        "id": 25,
+        "id": 26,
         "provinsi": "Kalimantan Selatan",
         "kabupaten": "Hulu Sungai Selatan",
         "series": {
@@ -5607,7 +5088,7 @@
         }
       },
       {
-        "id": 26,
+        "id": 27,
         "provinsi": "Sulawesi Utara",
         "kabupaten": "Kota Bitung",
         "series": {
@@ -5671,7 +5152,7 @@
         }
       },
       {
-        "id": 27,
+        "id": 28,
         "provinsi": "Sulawesi Tengah",
         "kabupaten": "Banggai Kepulauan",
         "series": {
@@ -5735,7 +5216,7 @@
         }
       },
       {
-        "id": 28,
+        "id": 29,
         "provinsi": "Sulawesi Tengah",
         "kabupaten": "Poso",
         "series": {
@@ -5799,7 +5280,7 @@
         }
       },
       {
-        "id": 29,
+        "id": 30,
         "provinsi": "Sulawesi Tengah",
         "kabupaten": "Prov. Sulawesi Tengah",
         "series": {
@@ -5863,7 +5344,7 @@
         }
       },
       {
-        "id": 30,
+        "id": 31,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Enrekang",
         "series": {
@@ -5927,7 +5408,7 @@
         }
       },
       {
-        "id": 31,
+        "id": 32,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Luwu",
         "series": {
@@ -5991,7 +5472,7 @@
         }
       },
       {
-        "id": 32,
+        "id": 33,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Luwu Timur",
         "series": {
@@ -6055,7 +5536,7 @@
         }
       },
       {
-        "id": 33,
+        "id": 34,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Pinrang",
         "series": {
@@ -6119,7 +5600,7 @@
         }
       },
       {
-        "id": 34,
+        "id": 35,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Tana Toraja",
         "series": {
@@ -6183,7 +5664,7 @@
         }
       },
       {
-        "id": 35,
+        "id": 36,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Toraja Utara",
         "series": {
@@ -6247,7 +5728,7 @@
         }
       },
       {
-        "id": 36,
+        "id": 37,
         "provinsi": "Sulawesi Selatan",
         "kabupaten": "Luwu Utara",
         "series": {
@@ -6311,7 +5792,7 @@
         }
       },
       {
-        "id": 37,
+        "id": 38,
         "provinsi": "Sulawesi Tenggara",
         "kabupaten": "Buton",
         "series": {
@@ -6375,7 +5856,7 @@
         }
       },
       {
-        "id": 38,
+        "id": 39,
         "provinsi": "Sulawesi Tenggara",
         "kabupaten": "Konawe",
         "series": {
@@ -6439,71 +5920,71 @@
         }
       },
       {
-        "id": 39,
+        "id": 40,
         "provinsi": "Maluku",
         "kabupaten": "Maluku Barat Daya",
         "series": {
           "permukiman": {
             "t_min_1": 100.0,
-            "t_0": 95.78,
-            "t_plus_1": 96.02,
-            "t_plus_2": 100.57,
-            "t_plus_3": 100.57,
-            "t_plus_4": null
+            "t_0": 100.0,
+            "t_plus_1": 100.0,
+            "t_plus_2": 100.0,
+            "t_plus_3": 100.0,
+            "t_plus_4": 100.0
           },
           "infrastruktur": {
-            "t_min_1": 100.0,
-            "t_0": 100.0,
-            "t_plus_1": 99.57,
-            "t_plus_2": 99.96,
-            "t_plus_3": 100.26,
-            "t_plus_4": null
-          },
-          "sosial": {
-            "t_min_1": 100.0,
-            "t_0": 99.99,
-            "t_plus_1": 100.1,
-            "t_plus_2": 99.98,
-            "t_plus_3": 99.62,
-            "t_plus_4": null
-          },
-          "ekonomi": {
             "t_min_1": 100.0,
             "t_0": 100.0,
             "t_plus_1": 100.0,
             "t_plus_2": 100.0,
             "t_plus_3": 100.0,
+            "t_plus_4": 100.0
+          },
+          "sosial": {
+            "t_min_1": 100.0,
+            "t_0": 100.0,
+            "t_plus_1": 100.0,
+            "t_plus_2": 100.0,
+            "t_plus_3": 100.0,
+            "t_plus_4": 100.0
+          },
+          "ekonomi": {
+            "t_min_1": null,
+            "t_0": null,
+            "t_plus_1": null,
+            "t_plus_2": null,
+            "t_plus_3": null,
             "t_plus_4": null
           },
           "multisektor": {
-            "t_min_1": 100.0,
-            "t_0": 101.73,
-            "t_plus_1": 102.55,
-            "t_plus_2": 103.05,
-            "t_plus_3": 102.38,
+            "t_min_1": null,
+            "t_0": null,
+            "t_plus_1": null,
+            "t_plus_2": null,
+            "t_plus_3": null,
             "t_plus_4": null
           }
         },
         "nilaiTAkhir": {
-          "permukiman": 100.57,
-          "infrastruktur": 100.26,
-          "sosial": 99.62,
-          "ekonomi": 100.0,
-          "multisektor": 102.38,
-          "rataRata": 100.57
+          "permukiman": 100.0,
+          "infrastruktur": 100.0,
+          "sosial": 100.0,
+          "ekonomi": null,
+          "multisektor": null,
+          "rataRata": 100.0
         },
         "kesimpulan": "Pulih",
         "kenaikan": {
-          "permukiman": 4.8,
-          "infrastruktur": 0.26,
-          "sosial": -0.37,
+          "permukiman": 0.0,
+          "infrastruktur": 0.0,
+          "sosial": 0.0,
           "ekonomi": 0.0,
-          "multisektor": 0.65,
-          "rataRata": 1.07
+          "multisektor": 0.0,
+          "rataRata": 0.0
         }
       },
       {
-        "id": 40,
+        "id": 41,
         "provinsi": "Maluku",
         "kabupaten": "Seram Bagian Timur",
         "series": {
@@ -6567,7 +6048,7 @@
         }
       },
       {
-        "id": 41,
+        "id": 42,
         "provinsi": "Maluku Utara",
         "kabupaten": "Kota Tidore Kepulauan",
         "series": {
@@ -6631,7 +6112,7 @@
         }
       },
       {
-        "id": 42,
+        "id": 43,
         "provinsi": "Papua",
         "kabupaten": "Kepulauan Yapen",
         "series": {

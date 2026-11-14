@@ -1,7 +1,7 @@
 {
-  "totalPoints": 767,
-  "totalProvinces": 17,
-  "totalKabupaten": 42,
+  "totalPoints": 887,
+  "totalProvinces": 19,
+  "totalKabupaten": 44,
   "bounds": [
     95.3378,
     -8.5358,
@@ -10,43 +10,43 @@
   ],
   "altitudeRange": [
     -205.7,
-    2018.8
+    1562.3
   ],
   "disasterTypes": [
     {
       "name": "Banjir",
-      "count": 437,
+      "count": 462,
       "color": "#2563EB"
     },
     {
       "name": "Tanah Longsor",
-      "count": 133,
+      "count": 137,
       "color": "#D97706"
     },
     {
+      "name": "Banjir Tanah Longsor",
+      "count": 85,
+      "color": "#0891B2"
+    },
+    {
       "name": "Lainnya",
-      "count": 71,
+      "count": 72,
       "color": "#64748B"
     },
     {
       "name": "Gempa Bumi",
-      "count": 38,
+      "count": 52,
       "color": "#DC2626"
     },
     {
-      "name": "Banjir Tanah Longsor",
-      "count": 23,
+      "name": "Tanah Longsor Banjir",
+      "count": 32,
       "color": "#0891B2"
     },
     {
       "name": "Kekeringan",
       "count": 22,
       "color": "#EAB308"
-    },
-    {
-      "name": "Tanah Longsor Banjir",
-      "count": 18,
-      "color": "#0891B2"
     },
     {
       "name": "Gempa Bumi Banjir",
@@ -81,6 +81,7 @@
   ],
   "years": [
     2,
+    21,
     22,
     2014,
     2018,
@@ -96,20 +97,22 @@
   "provinces": [
     "Sulawesi Selatan",
     "Sumatera Selatan",
+    "Sumatera Barat",
     "Jawa Timur",
     "Jawa Barat",
     "Sulawesi Tengah",
     "Sumatera Utara",
+    "Maluku",
     "Aceh",
     "Sulawesi Tenggara",
-    "Maluku",
     "Nusa Tenggara Barat",
     "Sulawesi Utara",
+    "Kalimantan Selatan",
     "Bengkulu",
     "Maluku Utara",
     "Jawa Tengah",
     "Papua",
-    "Kalimantan Selatan",
+    "Kalimantan Barat",
     "Jambi"
   ]
 }
